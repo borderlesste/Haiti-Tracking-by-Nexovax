@@ -2,22 +2,22 @@
   "date": "2026-11-15",
   "branch": "main",
   "api_windows": {
-    "passed": 56,
+    "passed": 57,
     "failed": 0,
     "warnings": 2,
-    "seconds": 67.61,
+    "seconds": 106.7,
     "postgis_tests": 6
   },
   "api_linux_container": {
-    "passed": 56,
+    "passed": 57,
     "failed": 0,
     "warnings": 2,
-    "seconds": 72.4,
+    "seconds": 83.16,
     "checkout": "code read-only; isolated runtime writable for fresh-fixture guard tests",
     "database": "disposable test database with scoped schemas"
   },
   "web_and_sites": {
-    "passed": 12,
+    "passed": 16,
     "failed": 0
   },
   "premium_static_ui": {
@@ -34,20 +34,35 @@
   "browser": "docs/BROWSER-QA.md",
   "limits": [
     "No remote Actions run",
-    "E2E job configured; remote Actions quota/run and remaining master browser scenarios pending",
+    "E2E job configured; remote Actions quota/run pending",
     "No physical GPS validation",
     "No external email delivery or free staging",
     "OS package findings remain in API image"
   ],
   "browser_e2e": {
-    "passed": 5,
+    "passed": 8,
     "failed": 0,
     "skipped": 0,
     "flaky": 0,
-    "seconds": 66.02,
+    "seconds": 134.85,
     "framework": "Playwright 1.65.1",
     "browser": "isolated Chromium",
     "hardware_gps": false,
-    "details": "docs/web-e2e-results.json"
+    "details": "docs/web-e2e-results.json",
+    "master_19_3_scenarios": 9,
+    "uncaught_exceptions": 0
+  },
+  "frontend_sast": {
+    "observations": 473,
+    "groups": 5,
+    "scanner_errors": 0,
+    "confirmed_security_vulnerabilities": 0,
+    "details": "docs/frontend-security-audit.json"
+  },
+  "build": {
+    "passed": true,
+    "js_minified_kb": 567.32,
+    "gzip_estimated_kb": 168.43,
+    "warning": "Initial bundle exceeds 500 kB; no real mobile performance certification"
   }
 }

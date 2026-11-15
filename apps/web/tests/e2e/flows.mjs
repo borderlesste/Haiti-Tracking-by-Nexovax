@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 
 export const baseURL = "http://127.0.0.1:3001";
 const contributor = "qa-contributor@example.org";
-const password = "Synthetic-browser-test-only-2026!";
+export const testPassword = "Synthetic-browser-test-only-2026!";
 const button = (ui, name) => ui.getByRole("button", { name, exact: true });
 const field = (ui, name) => ui.getByLabel(name, { exact: true });
 
@@ -11,14 +11,15 @@ export async function spanish(ui, go) {
   await go(baseURL + "/");
   await ui.locator("#language").selectOption("es");
 }
-async function login(ui, go) {
+export async function login(ui, go, email = contributor, otp = "") {
   await go(baseURL + "/acceso");
-  await field(ui, "Correo electrónico *").fill(contributor);
-  await field(ui, "Contraseña *").fill(password);
+  await field(ui, "Correo electrónico *").fill(email);
+  await field(ui, "Contraseña *").fill(testPassword);
+  if (otp) await field(ui, "Código del autenticador (personal autorizado)").fill(otp);
   await button(ui, "Iniciar sesión").click();
   await ui.getByRole("heading", { name: "Perfil y privacidad", exact: true }).waitFor({ state: "visible" });
 }
-async function logout(ui, go) {
+export async function logout(ui, go) {
   await go(baseURL + "/cuenta");
   await button(ui, "Cerrar sesión").click();
   await ui.getByRole("heading", { name: "Construyendo direcciones digitales para Haití", exact: true }).waitFor({ state: "visible" });
@@ -31,6 +32,7 @@ async function fillPlace(ui, go, name) {
   await field(ui, "Punto de referencia *").fill("Référence publique fictive — test automatisé");
   await field(ui, "Tipo de ubicación *").selectOption({ label: "Comercio" });
   await field(ui, "Nombre del lugar *").fill(name);
+  await field(ui, "Descripción").fill("Fiche de démonstration fictive; scénario E2E, non vérifié sur le terrain.");
   await field(ui, "Latitud").fill("18.548");
   await field(ui, "Longitud").fill("-72.299");
   await ui.getByRole("checkbox", { name: "Confirma el punto exacto en el mapa", exact: true }).check();

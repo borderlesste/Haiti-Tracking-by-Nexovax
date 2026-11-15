@@ -76,6 +76,22 @@ def test_invalid_private_self_and_cyclic_links(api, signed_user, proposal):
         db.rollback()
 
 
+def test_edit_preserves_correction_target_and_rejects_retargeting(api, signed_user, proposal):
+    original, other = places(api)
+    body = {**proposal, "mode": "draft", "target_location_code": original.public_code}
+    created = api.post("/v1/contributions", json=body, headers={"Idempotency-Key": "immutable-correction-target"}).json()["data"]
+    path = f"/v1/me/contributions/{created['id']}"
+    assert api.patch(path, json={**body, "version": 1, "target_location_code": other.public_code}).status_code == 422
+    without_target = {key: value for key, value in body.items() if key != "target_location_code"}
+    saved = api.patch(path, json={**without_target, "version": 1})
+    assert saved.status_code == 200, saved.text
+    assert saved.json()["data"]["payload"]["target_location_code"] == original.public_code
+    with api.app.state.Session() as db:
+        assert db.get(Contribution, created["id"]).target_location_id == original.id
+    new_place = api.post("/v1/contributions", json=without_target, headers={"Idempotency-Key": "immutable-new-place-target"}).json()["data"]
+    assert api.patch(f"/v1/me/contributions/{new_place['id']}", json={**body, "version": 1}).status_code == 422
+
+
 def test_merge_preserves_child_links_names_codes_and_versions(api, signed_user, staff_user):
     source, target = places(api)
     with api.app.state.Session() as db:

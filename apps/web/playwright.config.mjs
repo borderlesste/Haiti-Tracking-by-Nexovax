@@ -1,4 +1,7 @@
 import { defineConfig } from "@playwright/test";
+import { randomUUID } from "node:crypto";
+
+process.env.E2E_RUN_ID ||= randomUUID();
 
 export default defineConfig({
   testDir: "./tests/e2e",

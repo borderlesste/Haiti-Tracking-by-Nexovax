@@ -4,8 +4,8 @@
   "content_encoding": "gzip",
   "private_api_json_compression_not_enabled": true,
   "current_build_2026_11_15": {
-    "asset": "/assets/index-BcN1uAa4.js",
-    "wire_bytes": 198637,
+    "asset": "/assets/index-D-PveL88.js",
+    "wire_bytes": 198805,
     "content_encoding": "gzip",
     "measurement": "Local HTTP fetch without throttling; not a mobile load-time measurement"
   }

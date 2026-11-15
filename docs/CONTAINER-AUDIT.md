@@ -67,3 +67,5 @@ Para siguientes reconstrucciones: conservar el digest de la base y del artefacto
 ## Ronda con la aplicación ampliada
 
 El 2026-11-15 se repitió Trivy en las imágenes con QR, relaciones, alias y administración. Se conservaron los mismos inventarios OS: API 206 pares paquete/CVE (47 HIGH, 89 MEDIUM, 65 LOW, 5 UNKNOWN; ningún CRITICAL ni FixedVersion publicado), web cero coincidencias. Los resultados completos y digests están en la etapa `final_application_build_2026_11_15` del JSON. Los cambios posteriores de documentación y comportamiento UI no modifican el inventario OS; no implican una reducción adicional de estos riesgos residuales.
+
+Después de la ampliación E2E se reconstruyeron y arrancaron API/web locales con las correcciones de código. Docker reutilizó las capas de actualización OS auditadas; no se añadieron paquetes ni se repitió Trivy para esta modificación de fuentes. Los hashes de imagen del informe corresponden al artefacto auditado anterior; sus avisos OS residuales no se declaran corregidos por el nuevo build.

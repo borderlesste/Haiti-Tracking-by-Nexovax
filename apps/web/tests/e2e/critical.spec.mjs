@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./test.mjs";
 import { spanish, publicSearchAndQr, draftEditAndWithdraw, noGpsAndNoAdmin, deniedGpsDraft, prepareOnSiteReview, confirmOnSiteReview } from "./flows.mjs";
 import { onSiteGeolocation, deniedGeolocation } from "./geolocation.mjs";
 
@@ -6,6 +6,9 @@ test.beforeEach(async ({ page }) => spanish(page, url => page.goto(url)));
 test("anonymous public search and accessible QR dialog", async ({ page }) => {
   await publicSearchAndQr(page, url => page.goto(url));
   await expect(page.getByRole("button", { name: "Compartir ficha y QR", exact: true })).toBeFocused();
+  await page.locator(".leaflet-control-zoom-in").click();
+  await page.getByRole("link", { name: "Haiti Tracking by Nexovax", exact: true }).click();
+  await page.waitForTimeout(350); // Includes Leaflet's former 250 ms zoom callback after navigation.
 });
 test("draft without street or number, edit and owned withdrawal", async ({ page }) => {
   await draftEditAndWithdraw(page, url => page.goto(url), "E2E draft — " + test.info().testId,

@@ -25,6 +25,8 @@ export function Map({ places = [], point, onPoint, gps, home = false }) {
       scrollWheelZoom: false,
       zoomControl: true,
       attributionControl: true,
+      // Leaflet 1.9 leaves a zoom timer alive after remove(); avoid callbacks on a destroyed pane.
+      zoomAnimation: false,
     }).setView(home ? [19.04, -72.55] : [18.54, -72.33], home ? 7 : 12);
     map.current = m;
     L.tileLayer(

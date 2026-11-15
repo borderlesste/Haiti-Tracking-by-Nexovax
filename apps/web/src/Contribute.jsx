@@ -52,6 +52,7 @@ function ContributionForm({ id }) {
     [confirmed, setConfirmed] = useState(false),
     [recovery, setRecovery] = useState(false);
   const [review, setReview] = useState(null);
+  const correctionCode = id ? initial?.target_location_code : initial?.code || targetCode;
   const formRef = useRef();
   const submitMode = useRef("on_site");
   const requestKey = useRef(crypto.randomUUID());
@@ -237,11 +238,11 @@ function ContributionForm({ id }) {
         pin_adjustment_reason: data.get("pin_adjustment_reason") || "",
         source_declaration_accepted: !!data.get("source"),
         duplicate_resolution: {
-          choice: duplicates?.length ? "distinct_place" : "no_match",
+          choice: correctionCode ? "update_existing" : duplicates?.length ? "distinct_place" : "no_match",
           justification: data.get("justification") || "",
         },
         ...(version ? { version } : {}),
-        ...(targetCode ? { target_location_code: targetCode } : {}),
+        ...(correctionCode ? { target_location_code: correctionCode } : {}),
       };
       const j = await api(
         id ? `/me/contributions/${encodeURIComponent(id)}` : "/contributions",
@@ -270,7 +271,7 @@ function ContributionForm({ id }) {
         <div className="heading-with-icon">
           <MapPin size={48} weight="fill" className="red" />
           <div>
-            <h1>{t("contributeTitle")}</h1>
+            <h1>{t(correctionCode ? "proposeCorrection" : "contributeTitle")}</h1>
             <p>{t("contributeSub")}</p>
           </div>
         </div>
@@ -524,8 +525,9 @@ function ContributionForm({ id }) {
                       </ul>
                       <Field
                         as="textarea"
-                        label={t("distinctReason")}
+                        label={t(correctionCode ? "correctionReason" : "distinctReason")}
                         name="justification"
+                        defaultValue={initial?.duplicate_resolution?.justification || ""}
                         required
                         minLength={10}
                         rows={2}

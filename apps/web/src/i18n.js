@@ -488,6 +488,11 @@ const rows = {
     "Expliquez pourquoi ce lieu est différent",
     "Eksplike poukisa se yon lòt kote",
   ],
+  correctionReason: [
+    "Explica qué corriges en este lugar",
+    "Expliquez ce que vous corrigez pour ce lieu",
+    "Eksplike sa w ap korije pou kote sa a",
+  ],
   sourceConsent: [
     "Confirmo que esta información es original o tengo permiso para aportarla. No es una residencia privada.",
     "Je confirme avoir le droit de fournir ces informations. Ce lieu n’est pas un domicile privé.",

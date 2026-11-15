@@ -262,7 +262,7 @@ export function Gate({ children, admin = false }) {
         <p>{t("join")}</p>
         <Link
           className="button"
-          to={`/acceso?next=${encodeURIComponent(path)}`}
+          to={`/acceso?next=${encodeURIComponent(path + window.location.search)}`}
         >
           {t("login")}
           <ArrowRight size={18} />

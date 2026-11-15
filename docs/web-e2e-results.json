@@ -7,9 +7,9 @@
     "height": 844
   },
   "stats": {
-    "startTime": "2026-11-15T16:02:03.953Z",
-    "duration": 66015.814,
-    "expected": 5,
+    "startTime": "2026-11-15T19:39:58.712Z",
+    "duration": 134848.732,
+    "expected": 8,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
@@ -18,43 +18,49 @@
     {
       "name": "anonymous public search and accessible QR dialog",
       "status": "passed",
-      "milliseconds": 4538
+      "milliseconds": 7174
     },
     {
       "name": "draft without street or number, edit and owned withdrawal",
       "status": "passed",
-      "milliseconds": 8703
+      "milliseconds": 12347
     },
     {
       "name": "GPS-less submission and administrative access are blocked",
       "status": "passed",
-      "milliseconds": 9078
+      "milliseconds": 15826
     },
     {
       "name": "permission denial offers a draft without verified presence",
       "status": "passed",
-      "milliseconds": 7470
+      "milliseconds": 10576
     },
     {
       "name": "on-site review precedes submission, using a synthetic device response",
       "status": "passed",
-      "milliseconds": 7336
+      "milliseconds": 10805
+    },
+    {
+      "name": "registration and single-use email verification complete in the browser",
+      "status": "passed",
+      "milliseconds": 10148
+    },
+    {
+      "name": "moderation, duplicate correction, stable code, rejection, merge and private exclusion",
+      "status": "passed",
+      "milliseconds": 47141
+    },
+    {
+      "name": "developer creates a key, queries, observes usage and revokes it",
+      "status": "passed",
+      "milliseconds": 9757
     }
   ],
-  "environment": "fresh synthetic SQLite per run; localhost only; external email/S3 disabled",
-  "gps": "synthetic browser API responses, not physical GPS",
-  "database_checks": [
-    "one pending on-site proposal with private observation and selected point",
-    "one draft after GPS denial, without observation",
-    "no proposal for blocked submission",
-    "SQLite integrity_check passed"
-  ],
+  "master_19_3_scenarios": 9,
+  "uncaught_browser_exceptions": 0,
+  "environment": "Fresh synthetic SQLite per run; loopback only; external email/S3 disabled; distinct documentation IPv6 clients through trusted local proxy keep limits enabled",
+  "gps": "Synthetic browser API responses, not physical GPS",
+  "email": "Local test outbox only; single-use verification and replay rejection; no real delivery",
   "remote_ci_run": false,
-  "remaining_browser_scenarios": "docs/WEB-E2E.md",
-  "screenshot_replay": {
-    "passed": 1,
-    "purpose": "Replay only the draft test to capture its verified withdrawn state before logout",
-    "image": "docs/evidence/e2e-withdrawal-390.png",
-    "remaining_tests_unchanged": true
-  }
+  "remaining_validation": "Physical GPS, provider delivery/storage, remote CI, pilot and editorial/operational checks in WEB-E2E.md"
 }

@@ -24,11 +24,11 @@ La ejecución OSS usa exclusivamente las reglas JavaScript y TypeScript descarga
 
 **Ejecución terminada:** salida `0`, 193 reglas ejecutadas, 14 archivos objetivo y aproximadamente 100 % de líneas parseadas, según el resumen de Semgrep. Se cargaron 214 reglas; no todas son aplicables a los lenguajes presentes. El JSON emitió `errors: []` y ninguna regla omitida en `skipped_rules`. El proceso mostró una advertencia al cerrar un subproceso RPC que excedió un segundo; después confirmó el análisis terminado y conservó el resultado JSON completo.
 
-Se obtuvieron **475 avisos, no 475 vulnerabilidades**. Se revisaron sus cinco grupos y los contextos de origen:
+Se obtuvieron **473 avisos, no 473 vulnerabilidades**. Se revisaron sus cinco grupos y los contextos de origen:
 
 | Regla | Avisos | Evaluación |
 | --- | ---: | --- |
-| `i18next-key-format` | 417 | Convención de nombres de i18next que no aplica al traductor propio del proyecto. No constituye una vulnerabilidad. |
+| `i18next-key-format` | 415 | Convención de nombres de i18next que no aplica al traductor propio del proyecto. No constituye una vulnerabilidad. |
 | `jsx-not-internationalized` | 31 | Marcas, identificadores de documentación API, formatos y constantes de texto. Son observaciones de portabilidad; no introducen HTML ejecutable. |
 | `react-props-spreading` | 6 | Se comprobaron todos los sitios y sus callers: las props proceden del código y estado de la aplicación, sin un objeto API no confiable expandido como atributos HTML. No se confirmó inyección. |
 | `missing-template-string-indicator` | 20 | Duplicados en diez ubicaciones: objetos válidos dentro de interpolaciones `queryString` y un ejemplo JSON/curl literal. Falsos positivos en este contexto. |
@@ -40,13 +40,13 @@ El archivo `frontend-security-audit.json` conserva el resultado completo, las ub
 
 - El worker de Sites es estático: no conecta `/v1` al backend y no define por sí mismo CSP/cabeceras de seguridad. Antes de usar esa vía como despliegue funcional hay que comprobar el enrutamiento y las cabeceras del hosting. Las plantillas nginx/Vercel tienen controles propios; esta revisión no verificó un sitio remoto.
 - Las teselas se solicitan al proveedor externo. Al centrar un mapa en un aporte, dicho proveedor puede conocer el área del viewport y la IP. La elección del proveedor, sus condiciones y la información de privacidad deben validarse para el piloto; no hay analítica de movimientos añadida por este frontend.
-- No se realizaron pentest de navegador, fuzzing, pruebas de extensiones, de proveedores cartográficos o de integración remota en esta tarea. No se repitieron los tests Node ni los builds ya ejecutados por integración.
+- No se realizaron pentest de navegador, fuzzing, pruebas de extensiones, de proveedores cartográficos o de integración remota en esta tarea. La integración repitió 16 pruebas Node, build y ocho pruebas de navegador; no certifican proveedores remotos ni GPS físico.
 - Semgrep OSS y las reglas públicas tienen cobertura limitada, especialmente entre archivos y para la lógica de negocio. Las alertas automáticas requieren comprobar la entrada, el sumidero y las condiciones reales; un resultado limpio no sustituye la revisión manual ni la autorización del servidor.
 
-No se modificó código de la aplicación, datos de producción, servicios compartidos o credenciales. La revisión y las descargas de herramientas no generaron cargos de servicios de análisis.
+Las correcciones locales de navegación, intención de corrección y ciclo de vida del mapa están verificadas. No se modificaron datos de producción, servicios compartidos o credenciales reales. La revisión y las descargas de herramientas no generaron cargos de servicios de análisis.
 
 ## Ronda final y límites del snapshot
 
-Se repitió el análisis completo después de implementar QR, alias, relaciones, retiro, secciones comunales y administración: salida 0, 475 observaciones, cero errores del scanner, 193 reglas y 14 objetivos. Las referencias de línea de la primera revisión son históricas; los sitios y líneas de la ronda nueva constan en el JSON. Se revisaron los cinco grupos, incluidas las diez ubicaciones de interpolación. Durante el análisis cambiaron la lista del resumen final en `Contribute.jsx` y el cierre controlado de Escape en `ui.jsx`: ese delta se revisó manualmente y pasó las pruebas Node; el inventario SHA final no se presenta como un snapshot atómico del scanner.
+Se repitió el análisis completo después de implementar QR, alias, relaciones, retiro, secciones comunales y administración: salida 0, 473 observaciones, cero errores del scanner, 193 reglas y 14 objetivos. Las referencias de línea de la primera revisión son históricas; los sitios y líneas de la ronda nueva constan en el JSON. Se revisaron los cinco grupos, incluidas las diez ubicaciones de interpolación. La ronda actual se ejecutó después de las correcciones de destino/login y zoom; las fuentes de la aplicación permanecieron iguales durante el scanner. Se actualizó el inventario SHA y se revisó el delta manualmente. Los dos cambios de claves de traducción explican la reducción de 475 a 473 observaciones, sin introducir nuevos grupos. Las pruebas de navegador comprueban conservación del destino e intención después de devolución y ausencia de excepciones al salir durante zoom.
 
 Las nuevas URLs usan rutas fijas y códigos codificados. Las decisiones, relaciones, versiones, propiedad del retiro y tipos de acceso se validan en el servidor. Los nombres locales, referencias y campos del resumen se renderizan como texto React. Ninguna de estas comprobaciones certifica la entrega de correo, GPS físico o permisos reales del hosting.

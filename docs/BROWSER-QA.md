@@ -68,3 +68,5 @@ Evidencias adicionales locales (ignoradas por Git): `docs/evidence/withdraw-390.
 ## Suite Playwright autorizada
 
 Tras la autorización expresa del propietario se ejecutó Chromium con perfil de prueba separado. Los cinco casos de `tests/e2e/critical.spec.mjs` pasaron (66,02 s). El resumen ahora cuenta con evidencia automática positiva mediante GPS ficticio, además de denegación, borrador/retiro y búsqueda/QR. Se consultó la base de ese run de forma independiente. La configuración de CUA fue retirada y su pestaña QA cerrada. No se obtuvieron coordenadas físicas ni se declaró una presencia verificada. WEB-E2E.md y web-e2e-results.json contienen alcance y pendientes.
+
+Ronda E2E ampliada del 2026-11-15: ocho pruebas pasan a 390 × 844, cubriendo los nueve escenarios del §19.3 con correo y GPS ficticios. Login y edición de una corrección conservan destino/intención; las cuatro decisiones de moderación y el ciclo de claves están automatizados. Navegar durante zoom no produce excepciones. La auditoría premium estricta permanece en cero hallazgos. Resultados y límites actuales: `docs/WEB-E2E.md` y `docs/verification-final.json`.

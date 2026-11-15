@@ -582,7 +582,11 @@ def create_app(settings=None):
             raise HTTPException(409, "VERSION_CONFLICT")
         if payload.mode != "draft" and not user.email_verified:
             raise HTTPException(403, "EMAIL_VERIFICATION_REQUIRED")
+        target = find_location(session, payload.target_location_code) if payload.target_location_code else None
+        if target and target.id != row.target_location_id:
+            raise HTTPException(422, "TARGET_LOCATION_IMMUTABLE")
         data = validate_contribution(payload, session, row.target_location_id)
+        data["target_location_code"] = session.get(Location, row.target_location_id).public_code if row.target_location_id else None
         affected = session.execute(update(Contribution).where(Contribution.id == row.id, Contribution.version == payload.version, Contribution.status.in_(["draft", "changes_requested"])).values(payload=data, version=payload.version+1, status=contribution_status(data), updated_at=now())).rowcount
         if not affected:
             raise HTTPException(409, "VERSION_CONFLICT")

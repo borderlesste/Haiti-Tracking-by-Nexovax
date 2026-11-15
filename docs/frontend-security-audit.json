@@ -30,8 +30,8 @@
     },
     {
       "path": "apps/web/src/Contribute.jsx",
-      "sha256": "69a6f6deef6af1a36f760053266bd5e69141ed851e105ee3f5fbc31f4f36c4f6",
-      "bytes": 27605
+      "sha256": "93a2629eca6d63fea9698c4cbf49faa4f0dba963cf70f59a67daf4e682e7dd7f",
+      "bytes": 27910
     },
     {
       "path": "apps/web/src/Home.jsx",
@@ -40,8 +40,8 @@
     },
     {
       "path": "apps/web/src/i18n.js",
-      "sha256": "38afdd7d1fce3c256001fe715a8c3dc10f421cac941948fb5de2eb7355b645c8",
-      "bytes": 35374
+      "sha256": "6af732370b7aab977fa6cea14f7c5c1c4f30ca4099f5208dddad54640c3c1f32",
+      "bytes": 35540
     },
     {
       "path": "apps/web/src/main.jsx",
@@ -50,8 +50,8 @@
     },
     {
       "path": "apps/web/src/Map.jsx",
-      "sha256": "fe0cb6eac407dfe8578ceb1b2a637de30633579fb36ba7171d6a177b16e3af44",
-      "bytes": 3585
+      "sha256": "ed95e94db573d1654c7e2435f98ba76c47f000b860f7ba021c3870c1a5f52ed3",
+      "bytes": 3715
     },
     {
       "path": "apps/web/src/Places.jsx",
@@ -65,8 +65,8 @@
     },
     {
       "path": "apps/web/src/ui.jsx",
-      "sha256": "dc5e5dce18a8a25473d3a478430724bb40fd1e97689b0969b28db556b0143c42",
-      "bytes": 10312
+      "sha256": "87fa113188f4607c590acabbbd424e9e654a9e528f561638fcb85942cf1d1490",
+      "bytes": 10337
     },
     {
       "path": "apps/web/src/Workspace.jsx",
@@ -164,7 +164,10 @@
       "Source/version and withdrawal forms use the shared CSRF API helper; authorization, immutable hierarchy, ownership and atomic version checks remain on the server.",
       "Review FormData is transient; no GPS/private evidence persisted to browser storage.",
       "Controlled Escape handler prevents native close from bypassing a caller that keeps a pending submission open.",
-      "styles.css: removed one trailing empty line after verification; no selector or declaration changed."
+      "styles.css: removed one trailing empty line after verification; no selector or declaration changed.",
+      "Gate preserves the local query for corrections without copying fragment tokens; validNext still constrains the login destination.",
+      "Correction payloads retain their target and update_existing intent after changes_requested; API rejects target changes and canonicalizes an omitted code.",
+      "Leaflet zoomAnimation uses the public false option to prevent a pending transition callback after remove(); zoom and navigation remain usable."
     ]
   },
   "semgrep": {
@@ -180,7 +183,7 @@
     "configuration_files": 200,
     "metrics": "off",
     "version_check": "disabled",
-    "app_agent_tokens": "removed from scanner process environment",
+    "app_agent_tokens": "No app authentication or upload was used; local rules, metrics off and version checks disabled",
     "remote_auto_configuration": false,
     "code_uploaded": false,
     "raw_result": {
@@ -1765,14 +1768,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 77,
+            "line": 78,
             "col": 47,
-            "offset": 2865
+            "offset": 2957
           },
           "end": {
-            "line": 77,
+            "line": 78,
             "col": 57,
-            "offset": 2875
+            "offset": 2967
           },
           "extra": {
             "message": "Translation key 'error' should match format 'MODULE.FEATURE.*'",
@@ -1800,14 +1803,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 92,
+            "line": 93,
             "col": 73,
-            "offset": 3721
+            "offset": 3813
           },
           "end": {
-            "line": 92,
+            "line": 93,
             "col": 83,
-            "offset": 3731
+            "offset": 3823
           },
           "extra": {
             "message": "Translation key 'error' should match format 'MODULE.FEATURE.*'",
@@ -1835,14 +1838,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.lang.correctness.missing-template-string-indicator",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 106,
+            "line": 107,
             "col": 29,
-            "offset": 4121
+            "offset": 4213
           },
           "end": {
-            "line": 106,
+            "line": 107,
             "col": 115,
-            "offset": 4207
+            "offset": 4299
           },
           "extra": {
             "message": "This looks like a JavaScript template string. Are you missing a '$' in front of '{...}'?",
@@ -1863,14 +1866,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.lang.correctness.missing-template-string-indicator",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 106,
+            "line": 107,
             "col": 45,
-            "offset": 4137
+            "offset": 4229
           },
           "end": {
-            "line": 106,
+            "line": 107,
             "col": 115,
-            "offset": 4207
+            "offset": 4299
           },
           "extra": {
             "message": "This looks like a JavaScript template string. Are you missing a '$' in front of '{...}'?",
@@ -1891,14 +1894,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 121,
+            "line": 122,
             "col": 19,
-            "offset": 4816
+            "offset": 4908
           },
           "end": {
-            "line": 121,
+            "line": 122,
             "col": 33,
-            "offset": 4830
+            "offset": 4922
           },
           "extra": {
             "message": "Translation key 'gpsDenied' should match format 'MODULE.FEATURE.*'",
@@ -1926,14 +1929,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 151,
+            "line": 152,
             "col": 16,
-            "offset": 5825
+            "offset": 5917
           },
           "end": {
-            "line": 151,
+            "line": 152,
             "col": 29,
-            "offset": 5838
+            "offset": 5930
           },
           "extra": {
             "message": "Translation key 'required' should match format 'MODULE.FEATURE.*'",
@@ -1961,14 +1964,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 168,
+            "line": 169,
             "col": 16,
-            "offset": 6278
+            "offset": 6370
           },
           "end": {
-            "line": 168,
+            "line": 169,
             "col": 26,
-            "offset": 6288
+            "offset": 6380
           },
           "extra": {
             "message": "Translation key 'error' should match format 'MODULE.FEATURE.*'",
@@ -1996,14 +1999,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 194,
+            "line": 195,
             "col": 16,
-            "offset": 7177
+            "offset": 7269
           },
           "end": {
-            "line": 194,
+            "line": 195,
             "col": 33,
-            "offset": 7194
+            "offset": 7286
           },
           "extra": {
             "message": "Translation key 'confirmPoint' should match format 'MODULE.FEATURE.*'",
@@ -2031,14 +2034,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 198,
+            "line": 199,
             "col": 16,
-            "offset": 7278
+            "offset": 7370
           },
           "end": {
-            "line": 198,
+            "line": 199,
             "col": 32,
-            "offset": 7294
+            "offset": 7386
           },
           "extra": {
             "message": "Translation key 'gpsRequired' should match format 'MODULE.FEATURE.*'",
@@ -2066,14 +2069,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 202,
+            "line": 203,
             "col": 16,
-            "offset": 7378
+            "offset": 7470
           },
           "end": {
-            "line": 202,
+            "line": 203,
             "col": 42,
-            "offset": 7404
+            "offset": 7496
           },
           "extra": {
             "message": "Translation key 'verifiedEmailRequired' should match format 'MODULE.FEATURE.*'",
@@ -2101,14 +2104,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 206,
+            "line": 207,
             "col": 16,
-            "offset": 7487
+            "offset": 7579
           },
           "end": {
-            "line": 206,
+            "line": 207,
             "col": 35,
-            "offset": 7506
+            "offset": 7598
           },
           "extra": {
             "message": "Translation key 'duplicatesHelp' should match format 'MODULE.FEATURE.*'",
@@ -2136,14 +2139,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 211,
+            "line": 212,
             "col": 16,
-            "offset": 7724
+            "offset": 7816
           },
           "end": {
-            "line": 211,
+            "line": 212,
             "col": 40,
-            "offset": 7748
+            "offset": 7840
           },
           "extra": {
             "message": "Translation key 'locationAliasesHelp' should match format 'MODULE.FEATURE.*'",
@@ -2171,14 +2174,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 259,
+            "line": 260,
             "col": 16,
-            "offset": 9642
+            "offset": 9779
           },
           "end": {
-            "line": 259,
+            "line": 260,
             "col": 26,
-            "offset": 9652
+            "offset": 9789
           },
           "extra": {
             "message": "Translation key 'error' should match format 'MODULE.FEATURE.*'",
@@ -2206,49 +2209,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 273,
-            "col": 18,
-            "offset": 10135
-          },
-          "end": {
-            "line": 273,
-            "col": 38,
-            "offset": 10155
-          },
-          "extra": {
-            "message": "Translation key 'contributeTitle' should match format 'MODULE.FEATURE.*'",
-            "metadata": {
-              "category": "portability",
-              "technology": [
-                "react",
-                "mui",
-                "i18next"
-              ],
-              "references": [
-                "https://www.notion.so/hendyirawan/Internationalization-Localization-Policy-318c21674e5f44c48d6f136a6eb2e024",
-                "https://mui.com/",
-                "https://react.i18next.com/"
-              ]
-            },
-            "severity": "WARNING",
-            "fingerprint": "requires login",
-            "lines": "requires login",
-            "validation_state": "NO_VALIDATOR",
-            "engine_kind": "OSS"
-          }
-        },
-        {
-          "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
-          "path": "apps/web/src/Contribute.jsx",
-          "start": {
-            "line": 274,
+            "line": 275,
             "col": 17,
-            "offset": 10179
+            "offset": 10355
           },
           "end": {
-            "line": 274,
+            "line": 275,
             "col": 35,
-            "offset": 10197
+            "offset": 10373
           },
           "extra": {
             "message": "Translation key 'contributeSub' should match format 'MODULE.FEATURE.*'",
@@ -2276,14 +2244,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 279,
+            "line": 280,
             "col": 12,
-            "offset": 10322
+            "offset": 10498
           },
           "end": {
-            "line": 279,
+            "line": 280,
             "col": 28,
-            "offset": 10338
+            "offset": 10514
           },
           "extra": {
             "message": "Translation key 'gpsRequired' should match format 'MODULE.FEATURE.*'",
@@ -2311,14 +2279,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 285,
+            "line": 286,
             "col": 52,
-            "offset": 10585
+            "offset": 10761
           },
           "end": {
-            "line": 285,
+            "line": 286,
             "col": 62,
-            "offset": 10595
+            "offset": 10771
           },
           "extra": {
             "message": "Translation key 'error' should match format 'MODULE.FEATURE.*'",
@@ -2346,14 +2314,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 285,
+            "line": 286,
             "col": 132,
-            "offset": 10665
+            "offset": 10841
           },
           "end": {
-            "line": 285,
+            "line": 286,
             "col": 142,
-            "offset": 10675
+            "offset": 10851
           },
           "extra": {
             "message": "Translation key 'retry' should match format 'MODULE.FEATURE.*'",
@@ -2381,14 +2349,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 287,
+            "line": 288,
             "col": 31,
-            "offset": 10785
+            "offset": 10961
           },
           "end": {
-            "line": 287,
+            "line": 288,
             "col": 43,
-            "offset": 10797
+            "offset": 10973
           },
           "extra": {
             "message": "Translation key 'loading' should match format 'MODULE.FEATURE.*'",
@@ -2416,14 +2384,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 291,
+            "line": 292,
             "col": 37,
-            "offset": 10927
+            "offset": 11103
           },
           "end": {
-            "line": 291,
+            "line": 292,
             "col": 55,
-            "offset": 10945
+            "offset": 11121
           },
           "extra": {
             "message": "Translation key 'photoRecovery' should match format 'MODULE.FEATURE.*'",
@@ -2451,14 +2419,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 300,
+            "line": 301,
             "col": 30,
-            "offset": 11283
+            "offset": 11459
           },
           "end": {
-            "line": 300,
+            "line": 301,
             "col": 40,
-            "offset": 11293
+            "offset": 11469
           },
           "extra": {
             "message": "Translation key 'error' should match format 'MODULE.FEATURE.*'",
@@ -2486,14 +2454,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 306,
+            "line": 307,
             "col": 18,
-            "offset": 11440
+            "offset": 11616
           },
           "end": {
-            "line": 306,
+            "line": 307,
             "col": 28,
-            "offset": 11450
+            "offset": 11626
           },
           "extra": {
             "message": "Translation key 'retry' should match format 'MODULE.FEATURE.*'",
@@ -2521,14 +2489,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 308,
+            "line": 309,
             "col": 43,
-            "offset": 11520
+            "offset": 11696
           },
           "end": {
-            "line": 308,
+            "line": 309,
             "col": 61,
-            "offset": 11538
+            "offset": 11714
           },
           "extra": {
             "message": "Translation key 'contributions' should match format 'MODULE.FEATURE.*'",
@@ -2556,14 +2524,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.best-practice.react-props-spreading",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 322,
+            "line": 323,
             "col": 23,
-            "offset": 12006
+            "offset": 12182
           },
           "end": {
-            "line": 328,
+            "line": 329,
             "col": 20,
-            "offset": 12245
+            "offset": 12421
           },
           "extra": {
             "message": "It's best practice to explicitly pass props to an HTML component rather than use the spread operator. The spread operator risks passing invalid HTML props to an HTML element, which can cause console warnings or worse, give malicious actors a way to inject unexpected attributes.",
@@ -2588,14 +2556,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 331,
+            "line": 332,
             "col": 26,
-            "offset": 12317
+            "offset": 12493
           },
           "end": {
-            "line": 331,
+            "line": 332,
             "col": 43,
-            "offset": 12334
+            "offset": 12510
           },
           "extra": {
             "message": "Translation key 'neighborhood' should match format 'MODULE.FEATURE.*'",
@@ -2623,14 +2591,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 339,
+            "line": 340,
             "col": 26,
-            "offset": 12616
+            "offset": 12792
           },
           "end": {
-            "line": 339,
+            "line": 340,
             "col": 37,
-            "offset": 12627
+            "offset": 12803
           },
           "extra": {
             "message": "Translation key 'street' should match format 'MODULE.FEATURE.*'",
@@ -2658,14 +2626,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 346,
+            "line": 347,
             "col": 26,
-            "offset": 12876
+            "offset": 13052
           },
           "end": {
-            "line": 346,
+            "line": 347,
             "col": 37,
-            "offset": 12887
+            "offset": 13063
           },
           "extra": {
             "message": "Translation key 'number' should match format 'MODULE.FEATURE.*'",
@@ -2693,14 +2661,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 353,
+            "line": 354,
             "col": 26,
-            "offset": 13135
+            "offset": 13311
           },
           "end": {
-            "line": 353,
+            "line": 354,
             "col": 40,
-            "offset": 13149
+            "offset": 13325
           },
           "extra": {
             "message": "Translation key 'reference' should match format 'MODULE.FEATURE.*'",
@@ -2728,14 +2696,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 361,
+            "line": 362,
             "col": 26,
-            "offset": 13448
+            "offset": 13624
           },
           "end": {
-            "line": 361,
+            "line": 362,
             "col": 40,
-            "offset": 13462
+            "offset": 13638
           },
           "extra": {
             "message": "Translation key 'placeName' should match format 'MODULE.FEATURE.*'",
@@ -2763,14 +2731,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 370,
+            "line": 371,
             "col": 27,
-            "offset": 13840
+            "offset": 14016
           },
           "end": {
-            "line": 370,
+            "line": 371,
             "col": 49,
-            "offset": 13862
+            "offset": 14038
           },
           "extra": {
             "message": "Translation key 'additionalAddress' should match format 'MODULE.FEATURE.*'",
@@ -2798,14 +2766,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 371,
+            "line": 372,
             "col": 43,
-            "offset": 13917
+            "offset": 14093
           },
           "end": {
-            "line": 371,
+            "line": 372,
             "col": 63,
-            "offset": 13937
+            "offset": 14113
           },
           "extra": {
             "message": "Translation key 'sectionOptional' should match format 'MODULE.FEATURE.*'",
@@ -2833,14 +2801,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 375,
+            "line": 376,
             "col": 56,
-            "offset": 14340
+            "offset": 14516
           },
           "end": {
-            "line": 375,
+            "line": 376,
             "col": 66,
-            "offset": 14350
+            "offset": 14526
           },
           "extra": {
             "message": "Translation key 'error' should match format 'MODULE.FEATURE.*'",
@@ -2868,14 +2836,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 375,
+            "line": 376,
             "col": 156,
-            "offset": 14440
+            "offset": 14616
           },
           "end": {
-            "line": 375,
+            "line": 376,
             "col": 166,
-            "offset": 14450
+            "offset": 14626
           },
           "extra": {
             "message": "Translation key 'retry' should match format 'MODULE.FEATURE.*'",
@@ -2903,14 +2871,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 376,
+            "line": 377,
             "col": 31,
-            "offset": 14502
+            "offset": 14678
           },
           "end": {
-            "line": 376,
+            "line": 377,
             "col": 45,
-            "offset": 14516
+            "offset": 14692
           },
           "extra": {
             "message": "Translation key 'unitLabel' should match format 'MODULE.FEATURE.*'",
@@ -2938,14 +2906,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 377,
+            "line": 378,
             "col": 45,
-            "offset": 14649
+            "offset": 14825
           },
           "end": {
-            "line": 377,
+            "line": 378,
             "col": 61,
-            "offset": 14665
+            "offset": 14841
           },
           "extra": {
             "message": "Translation key 'accessNotes' should match format 'MODULE.FEATURE.*'",
@@ -2973,14 +2941,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 378,
+            "line": 379,
             "col": 31,
-            "offset": 14798
+            "offset": 14974
           },
           "end": {
-            "line": 378,
+            "line": 379,
             "col": 50,
-            "offset": 14817
+            "offset": 14993
           },
           "extra": {
             "message": "Translation key 'parentLocation' should match format 'MODULE.FEATURE.*'",
@@ -3008,14 +2976,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 379,
+            "line": 380,
             "col": 31,
-            "offset": 14978
+            "offset": 15154
           },
           "end": {
-            "line": 379,
+            "line": 380,
             "col": 47,
-            "offset": 14994
+            "offset": 15170
           },
           "extra": {
             "message": "Translation key 'accessPoint' should match format 'MODULE.FEATURE.*'",
@@ -3043,14 +3011,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 379,
+            "line": 380,
             "col": 174,
-            "offset": 15121
+            "offset": 15297
           },
           "end": {
-            "line": 379,
+            "line": 380,
             "col": 192,
-            "offset": 15139
+            "offset": 15315
           },
           "extra": {
             "message": "Translation key 'relationsHelp' should match format 'MODULE.FEATURE.*'",
@@ -3078,14 +3046,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 380,
+            "line": 381,
             "col": 45,
-            "offset": 15189
+            "offset": 15365
           },
           "end": {
-            "line": 380,
+            "line": 381,
             "col": 57,
-            "offset": 15201
+            "offset": 15377
           },
           "extra": {
             "message": "Translation key 'aliases' should match format 'MODULE.FEATURE.*'",
@@ -3113,14 +3081,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 380,
+            "line": 381,
             "col": 157,
-            "offset": 15301
+            "offset": 15477
           },
           "end": {
-            "line": 380,
+            "line": 381,
             "col": 181,
-            "offset": 15325
+            "offset": 15501
           },
           "extra": {
             "message": "Translation key 'locationAliasesHelp' should match format 'MODULE.FEATURE.*'",
@@ -3148,14 +3116,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 382,
+            "line": 383,
             "col": 65,
-            "offset": 15421
+            "offset": 15597
           },
           "end": {
-            "line": 382,
+            "line": 383,
             "col": 85,
-            "offset": 15441
+            "offset": 15617
           },
           "extra": {
             "message": "Translation key 'knowledgeSource' should match format 'MODULE.FEATURE.*'",
@@ -3183,14 +3151,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 386,
+            "line": 387,
             "col": 24,
-            "offset": 15730
+            "offset": 15906
           },
           "end": {
-            "line": 386,
+            "line": 387,
             "col": 40,
-            "offset": 15746
+            "offset": 15922
           },
           "extra": {
             "message": "Translation key 'description' should match format 'MODULE.FEATURE.*'",
@@ -3218,14 +3186,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 396,
+            "line": 397,
             "col": 20,
-            "offset": 16094
+            "offset": 16270
           },
           "end": {
-            "line": 396,
+            "line": 397,
             "col": 36,
-            "offset": 16110
+            "offset": 16286
           },
           "extra": {
             "message": "Translation key 'coordinates' should match format 'MODULE.FEATURE.*'",
@@ -3253,14 +3221,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 405,
+            "line": 406,
             "col": 20,
-            "offset": 16382
+            "offset": 16558
           },
           "end": {
-            "line": 405,
+            "line": 406,
             "col": 36,
-            "offset": 16398
+            "offset": 16574
           },
           "extra": {
             "message": "Translation key 'activateGps' should match format 'MODULE.FEATURE.*'",
@@ -3288,14 +3256,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 408,
+            "line": 409,
             "col": 36,
-            "offset": 16485
+            "offset": 16661
           },
           "end": {
-            "line": 408,
+            "line": 409,
             "col": 51,
-            "offset": 16500
+            "offset": 16676
           },
           "extra": {
             "message": "Translation key 'gpsPrivacy' should match format 'MODULE.FEATURE.*'",
@@ -3323,14 +3291,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 421,
+            "line": 422,
             "col": 27,
-            "offset": 16928
+            "offset": 17104
           },
           "end": {
-            "line": 421,
+            "line": 422,
             "col": 35,
-            "offset": 16936
+            "offset": 17112
           },
           "extra": {
             "message": "Translation key 'lat' should match format 'MODULE.FEATURE.*'",
@@ -3358,14 +3326,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 425,
+            "line": 426,
             "col": 27,
-            "offset": 17093
+            "offset": 17269
           },
           "end": {
-            "line": 425,
+            "line": 426,
             "col": 35,
-            "offset": 17101
+            "offset": 17277
           },
           "extra": {
             "message": "Translation key 'lon' should match format 'MODULE.FEATURE.*'",
@@ -3393,14 +3361,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 429,
+            "line": 430,
             "col": 27,
-            "offset": 17259
+            "offset": 17435
           },
           "end": {
-            "line": 429,
+            "line": 430,
             "col": 40,
-            "offset": 17272
+            "offset": 17448
           },
           "extra": {
             "message": "Translation key 'accuracy' should match format 'MODULE.FEATURE.*'",
@@ -3428,14 +3396,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 438,
+            "line": 439,
             "col": 20,
-            "offset": 17583
+            "offset": 17759
           },
           "end": {
-            "line": 438,
+            "line": 439,
             "col": 37,
-            "offset": 17600
+            "offset": 17776
           },
           "extra": {
             "message": "Translation key 'confirmPoint' should match format 'MODULE.FEATURE.*'",
@@ -3463,14 +3431,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 440,
+            "line": 441,
             "col": 21,
-            "offset": 17646
+            "offset": 17822
           },
           "end": {
-            "line": 440,
+            "line": 441,
             "col": 41,
-            "offset": 17666
+            "offset": 17842
           },
           "extra": {
             "message": "Translation key 'confirmPointSub' should match format 'MODULE.FEATURE.*'",
@@ -3498,14 +3466,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 450,
+            "line": 451,
             "col": 28,
-            "offset": 18012
+            "offset": 18188
           },
           "end": {
-            "line": 450,
+            "line": 451,
             "col": 36,
-            "offset": 18020
+            "offset": 18196
           },
           "extra": {
             "message": "Translation key 'lat' should match format 'MODULE.FEATURE.*'",
@@ -3533,14 +3501,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 466,
+            "line": 467,
             "col": 28,
-            "offset": 18601
+            "offset": 18777
           },
           "end": {
-            "line": 466,
+            "line": 467,
             "col": 36,
-            "offset": 18609
+            "offset": 18785
           },
           "extra": {
             "message": "Translation key 'lon' should match format 'MODULE.FEATURE.*'",
@@ -3568,14 +3536,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 488,
+            "line": 489,
             "col": 26,
-            "offset": 19427
+            "offset": 19603
           },
           "end": {
-            "line": 488,
+            "line": 489,
             "col": 43,
-            "offset": 19444
+            "offset": 19620
           },
           "extra": {
             "message": "Translation key 'confirmPoint' should match format 'MODULE.FEATURE.*'",
@@ -3603,14 +3571,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 490,
+            "line": 491,
             "col": 62,
-            "offset": 19541
+            "offset": 19717
           },
           "end": {
-            "line": 490,
+            "line": 491,
             "col": 78,
-            "offset": 19557
+            "offset": 19733
           },
           "extra": {
             "message": "Translation key 'pinDistance' should match format 'MODULE.FEATURE.*'",
@@ -3638,14 +3606,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 490,
+            "line": 491,
             "col": 112,
-            "offset": 19591
+            "offset": 19767
           },
           "end": {
-            "line": 490,
+            "line": 491,
             "col": 137,
-            "offset": 19616
+            "offset": 19792
           },
           "extra": {
             "message": "Translation key 'observedPositionHint' should match format 'MODULE.FEATURE.*'",
@@ -3673,14 +3641,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 491,
+            "line": 492,
             "col": 94,
-            "offset": 19717
+            "offset": 19893
           },
           "end": {
-            "line": 491,
+            "line": 492,
             "col": 118,
-            "offset": 19741
+            "offset": 19917
           },
           "extra": {
             "message": "Translation key 'pinAdjustmentReason' should match format 'MODULE.FEATURE.*'",
@@ -3708,14 +3676,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 497,
+            "line": 498,
             "col": 22,
-            "offset": 20006
+            "offset": 20182
           },
           "end": {
-            "line": 497,
+            "line": 498,
             "col": 42,
-            "offset": 20026
+            "offset": 20202
           },
           "extra": {
             "message": "Translation key 'checkDuplicates' should match format 'MODULE.FEATURE.*'",
@@ -3743,14 +3711,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 506,
+            "line": 507,
             "col": 22,
-            "offset": 20356
+            "offset": 20532
           },
           "end": {
-            "line": 506,
+            "line": 507,
             "col": 42,
-            "offset": 20376
+            "offset": 20552
           },
           "extra": {
             "message": "Translation key 'checkDuplicates' should match format 'MODULE.FEATURE.*'",
@@ -3778,14 +3746,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 509,
+            "line": 510,
             "col": 38,
-            "offset": 20469
+            "offset": 20645
           },
           "end": {
-            "line": 509,
+            "line": 510,
             "col": 57,
-            "offset": 20488
+            "offset": 20664
           },
           "extra": {
             "message": "Translation key 'duplicatesHelp' should match format 'MODULE.FEATURE.*'",
@@ -3813,14 +3781,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 520,
+            "line": 521,
             "col": 66,
-            "offset": 21005
+            "offset": 21181
           },
           "end": {
-            "line": 520,
+            "line": 521,
             "col": 80,
-            "offset": 21019
+            "offset": 21195
           },
           "extra": {
             "message": "Translation key 'thisPlace' should match format 'MODULE.FEATURE.*'",
@@ -3848,14 +3816,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 521,
+            "line": 522,
             "col": 96,
-            "offset": 21124
+            "offset": 21300
           },
           "end": {
-            "line": 521,
+            "line": 522,
             "col": 118,
-            "offset": 21146
+            "offset": 21322
           },
           "extra": {
             "message": "Translation key 'proposeCorrection' should match format 'MODULE.FEATURE.*'",
@@ -3883,49 +3851,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 527,
-            "col": 32,
-            "offset": 21347
-          },
-          "end": {
-            "line": 527,
-            "col": 51,
-            "offset": 21366
-          },
-          "extra": {
-            "message": "Translation key 'distinctReason' should match format 'MODULE.FEATURE.*'",
-            "metadata": {
-              "category": "portability",
-              "technology": [
-                "react",
-                "mui",
-                "i18next"
-              ],
-              "references": [
-                "https://www.notion.so/hendyirawan/Internationalization-Localization-Policy-318c21674e5f44c48d6f136a6eb2e024",
-                "https://mui.com/",
-                "https://react.i18next.com/"
-              ]
-            },
-            "severity": "WARNING",
-            "fingerprint": "requires login",
-            "lines": "requires login",
-            "validation_state": "NO_VALIDATOR",
-            "engine_kind": "OSS"
-          }
-        },
-        {
-          "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
-          "path": "apps/web/src/Contribute.jsx",
-          "start": {
-            "line": 536,
+            "line": 538,
             "col": 30,
-            "offset": 21670
+            "offset": 21975
           },
           "end": {
-            "line": 536,
+            "line": 538,
             "col": 47,
-            "offset": 21687
+            "offset": 21992
           },
           "extra": {
             "message": "Translation key 'noDuplicates' should match format 'MODULE.FEATURE.*'",
@@ -3953,14 +3886,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 542,
+            "line": 544,
             "col": 20,
-            "offset": 21871
+            "offset": 22176
           },
           "end": {
-            "line": 542,
+            "line": 544,
             "col": 31,
-            "offset": 21882
+            "offset": 22187
           },
           "extra": {
             "message": "Translation key 'photos' should match format 'MODULE.FEATURE.*'",
@@ -3988,14 +3921,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 546,
+            "line": 548,
             "col": 28,
-            "offset": 22030
+            "offset": 22335
           },
           "end": {
-            "line": 546,
+            "line": 548,
             "col": 42,
-            "offset": 22044
+            "offset": 22349
           },
           "extra": {
             "message": "Translation key 'addPhotos' should match format 'MODULE.FEATURE.*'",
@@ -4023,14 +3956,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.jsx-not-internationalized",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 547,
+            "line": 549,
             "col": 19,
-            "offset": 22074
+            "offset": 22379
           },
           "end": {
-            "line": 547,
+            "line": 549,
             "col": 64,
-            "offset": 22119
+            "offset": 22424
           },
           "extra": {
             "message": "JSX element not internationalized: 'JPG, PNG · 5 MB · 5 '.  You should support different languages in your website or app with internationalization. Instead, use packages such as `i18next` in order to internationalize your elements.",
@@ -4058,14 +3991,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 547,
+            "line": 549,
             "col": 49,
-            "offset": 22104
+            "offset": 22409
           },
           "end": {
-            "line": 547,
+            "line": 549,
             "col": 60,
-            "offset": 22115
+            "offset": 22420
           },
           "extra": {
             "message": "Translation key 'photos' should match format 'MODULE.FEATURE.*'",
@@ -4093,14 +4026,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 562,
+            "line": 564,
             "col": 34,
-            "offset": 22738
+            "offset": 23043
           },
           "end": {
-            "line": 562,
+            "line": 564,
             "col": 48,
-            "offset": 22752
+            "offset": 23057
           },
           "extra": {
             "message": "Translation key 'fileError' should match format 'MODULE.FEATURE.*'",
@@ -4128,14 +4061,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 570,
+            "line": 572,
             "col": 38,
-            "offset": 23010
+            "offset": 23315
           },
           "end": {
-            "line": 570,
+            "line": 572,
             "col": 54,
-            "offset": 23026
+            "offset": 23331
           },
           "extra": {
             "message": "Translation key 'photoPolicy' should match format 'MODULE.FEATURE.*'",
@@ -4163,14 +4096,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 584,
+            "line": 586,
             "col": 24,
-            "offset": 23530
+            "offset": 23835
           },
           "end": {
-            "line": 584,
+            "line": 586,
             "col": 42,
-            "offset": 23548
+            "offset": 23853
           },
           "extra": {
             "message": "Translation key 'sourceConsent' should match format 'MODULE.FEATURE.*'",
@@ -4198,14 +4131,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 594,
+            "line": 596,
             "col": 20,
-            "offset": 23902
+            "offset": 24207
           },
           "end": {
-            "line": 594,
+            "line": 596,
             "col": 30,
-            "offset": 23912
+            "offset": 24217
           },
           "extra": {
             "message": "Translation key 'draft' should match format 'MODULE.FEATURE.*'",
@@ -4233,14 +4166,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 603,
+            "line": 605,
             "col": 20,
-            "offset": 24218
+            "offset": 24523
           },
           "end": {
-            "line": 603,
+            "line": 605,
             "col": 29,
-            "offset": 24227
+            "offset": 24532
           },
           "extra": {
             "message": "Translation key 'send' should match format 'MODULE.FEATURE.*'",
@@ -4268,14 +4201,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 613,
+            "line": 615,
             "col": 16,
-            "offset": 24539
+            "offset": 24844
           },
           "end": {
-            "line": 613,
+            "line": 615,
             "col": 28,
-            "offset": 24551
+            "offset": 24856
           },
           "extra": {
             "message": "Translation key 'quality' should match format 'MODULE.FEATURE.*'",
@@ -4303,14 +4236,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 616,
+            "line": 618,
             "col": 16,
-            "offset": 24606
+            "offset": 24911
           },
           "end": {
-            "line": 616,
+            "line": 618,
             "col": 29,
-            "offset": 24619
+            "offset": 24924
           },
           "extra": {
             "message": "Translation key 'accuracy' should match format 'MODULE.FEATURE.*'",
@@ -4338,14 +4271,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 626,
+            "line": 628,
             "col": 16,
-            "offset": 25010
+            "offset": 25315
           },
           "end": {
-            "line": 626,
+            "line": 628,
             "col": 27,
-            "offset": 25021
+            "offset": 25326
           },
           "extra": {
             "message": "Translation key 'status' should match format 'MODULE.FEATURE.*'",
@@ -4373,14 +4306,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 628,
+            "line": 630,
             "col": 44,
-            "offset": 25086
+            "offset": 25391
           },
           "end": {
-            "line": 628,
+            "line": 630,
             "col": 56,
-            "offset": 25098
+            "offset": 25403
           },
           "extra": {
             "message": "Translation key 'pending' should match format 'MODULE.FEATURE.*'",
@@ -4408,14 +4341,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 631,
+            "line": 633,
             "col": 19,
-            "offset": 25202
+            "offset": 25507
           },
           "end": {
-            "line": 631,
+            "line": 633,
             "col": 35,
-            "offset": 25218
+            "offset": 25523
           },
           "extra": {
             "message": "Translation key 'humanReview' should match format 'MODULE.FEATURE.*'",
@@ -4443,14 +4376,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 637,
+            "line": 639,
             "col": 16,
-            "offset": 25406
+            "offset": 25711
           },
           "end": {
-            "line": 637,
+            "line": 639,
             "col": 25,
-            "offset": 25415
+            "offset": 25720
           },
           "extra": {
             "message": "Translation key 'tips' should match format 'MODULE.FEATURE.*'",
@@ -4478,14 +4411,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 649,
+            "line": 651,
             "col": 24,
-            "offset": 25806
+            "offset": 26111
           },
           "end": {
-            "line": 649,
+            "line": 651,
             "col": 40,
-            "offset": 25822
+            "offset": 26127
           },
           "extra": {
             "message": "Translation key 'recognition' should match format 'MODULE.FEATURE.*'",
@@ -4513,14 +4446,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 650,
+            "line": 652,
             "col": 19,
-            "offset": 25852
+            "offset": 26157
           },
           "end": {
-            "line": 650,
+            "line": 652,
             "col": 39,
-            "offset": 25872
+            "offset": 26177
           },
           "extra": {
             "message": "Translation key 'recognitionDesc' should match format 'MODULE.FEATURE.*'",
@@ -4548,14 +4481,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 655,
+            "line": 657,
             "col": 22,
-            "offset": 25974
+            "offset": 26279
           },
           "end": {
-            "line": 655,
+            "line": 657,
             "col": 43,
-            "offset": 25995
+            "offset": 26300
           },
           "extra": {
             "message": "Translation key 'reviewBeforeSend' should match format 'MODULE.FEATURE.*'",
@@ -4583,14 +4516,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 662,
+            "line": 664,
             "col": 15,
-            "offset": 27189
+            "offset": 27494
           },
           "end": {
-            "line": 662,
+            "line": 664,
             "col": 31,
-            "offset": 27205
+            "offset": 27510
           },
           "extra": {
             "message": "Translation key 'humanReview' should match format 'MODULE.FEATURE.*'",
@@ -4618,14 +4551,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 664,
+            "line": 666,
             "col": 88,
-            "offset": 27341
+            "offset": 27646
           },
           "end": {
-            "line": 664,
+            "line": 666,
             "col": 97,
-            "offset": 27350
+            "offset": 27655
           },
           "extra": {
             "message": "Translation key 'edit' should match format 'MODULE.FEATURE.*'",
@@ -4653,14 +4586,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Contribute.jsx",
           "start": {
-            "line": 665,
+            "line": 667,
             "col": 85,
-            "offset": 27446
+            "offset": 27751
           },
           "end": {
-            "line": 665,
+            "line": 667,
             "col": 103,
-            "offset": 27464
+            "offset": 27769
           },
           "extra": {
             "message": "Translation key 'sendForReview' should match format 'MODULE.FEATURE.*'",
@@ -5283,14 +5216,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Map.jsx",
           "start": {
-            "line": 73,
+            "line": 75,
             "col": 16,
-            "offset": 2435
+            "offset": 2565
           },
           "end": {
-            "line": 73,
+            "line": 75,
             "col": 35,
-            "offset": 2454
+            "offset": 2584
           },
           "extra": {
             "message": "Translation key 'selectedAccess' should match format 'MODULE.FEATURE.*'",
@@ -5318,14 +5251,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Map.jsx",
           "start": {
-            "line": 74,
+            "line": 76,
             "col": 14,
-            "offset": 2470
+            "offset": 2600
           },
           "end": {
-            "line": 74,
+            "line": 76,
             "col": 33,
-            "offset": 2489
+            "offset": 2619
           },
           "extra": {
             "message": "Translation key 'selectedAccess' should match format 'MODULE.FEATURE.*'",
@@ -5353,14 +5286,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Map.jsx",
           "start": {
-            "line": 96,
+            "line": 98,
             "col": 24,
-            "offset": 3225
+            "offset": 3355
           },
           "end": {
-            "line": 96,
+            "line": 98,
             "col": 45,
-            "offset": 3246
+            "offset": 3376
           },
           "extra": {
             "message": "Translation key 'observedPosition' should match format 'MODULE.FEATURE.*'",
@@ -5388,14 +5321,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Map.jsx",
           "start": {
-            "line": 105,
+            "line": 107,
             "col": 21,
-            "offset": 3473
+            "offset": 3603
           },
           "end": {
-            "line": 105,
+            "line": 107,
             "col": 29,
-            "offset": 3481
+            "offset": 3611
           },
           "extra": {
             "message": "Translation key 'map' should match format 'MODULE.FEATURE.*'",
@@ -5423,14 +5356,14 @@
           "check_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
           "path": "apps/web/src/Map.jsx",
           "start": {
-            "line": 107,
+            "line": 109,
             "col": 51,
-            "offset": 3544
+            "offset": 3674
           },
           "end": {
-            "line": 107,
+            "line": 109,
             "col": 61,
-            "offset": 3554
+            "offset": 3684
           },
           "extra": {
             "message": "Translation key 'error' should match format 'MODULE.FEATURE.*'",
@@ -16375,12 +16308,12 @@
           "start": {
             "line": 267,
             "col": 12,
-            "offset": 7360
+            "offset": 7385
           },
           "end": {
             "line": 267,
             "col": 22,
-            "offset": 7370
+            "offset": 7395
           },
           "extra": {
             "message": "Translation key 'login' should match format 'MODULE.FEATURE.*'",
@@ -16410,12 +16343,12 @@
           "start": {
             "line": 270,
             "col": 31,
-            "offset": 7456
+            "offset": 7481
           },
           "end": {
             "line": 270,
             "col": 44,
-            "offset": 7469
+            "offset": 7494
           },
           "extra": {
             "message": "Translation key 'register' should match format 'MODULE.FEATURE.*'",
@@ -16445,12 +16378,12 @@
           "start": {
             "line": 276,
             "col": 14,
-            "offset": 7634
+            "offset": 7659
           },
           "end": {
             "line": 276,
             "col": 28,
-            "offset": 7648
+            "offset": 7673
           },
           "extra": {
             "message": "Translation key 'forbidden' should match format 'MODULE.FEATURE.*'",
@@ -16480,12 +16413,12 @@
           "start": {
             "line": 277,
             "col": 23,
-            "offset": 7678
+            "offset": 7703
           },
           "end": {
             "line": 277,
             "col": 32,
-            "offset": 7687
+            "offset": 7712
           },
           "extra": {
             "message": "Translation key 'home' should match format 'MODULE.FEATURE.*'",
@@ -16515,12 +16448,12 @@
           "start": {
             "line": 325,
             "col": 14,
-            "offset": 9120
+            "offset": 9145
           },
           "end": {
             "line": 325,
             "col": 27,
-            "offset": 9133
+            "offset": 9158
           },
           "extra": {
             "message": "Translation key 'language' should match format 'MODULE.FEATURE.*'",
@@ -16550,12 +16483,12 @@
           "start": {
             "line": 342,
             "col": 29,
-            "offset": 9641
+            "offset": 9666
           },
           "end": {
             "line": 342,
             "col": 41,
-            "offset": 9653
+            "offset": 9678
           },
           "extra": {
             "message": "Translation key 'account' should match format 'MODULE.FEATURE.*'",
@@ -16585,12 +16518,12 @@
           "start": {
             "line": 350,
             "col": 29,
-            "offset": 9953
+            "offset": 9978
           },
           "end": {
             "line": 350,
             "col": 40,
-            "offset": 9964
+            "offset": 9989
           },
           "extra": {
             "message": "Translation key 'logout' should match format 'MODULE.FEATURE.*'",
@@ -16620,12 +16553,12 @@
           "start": {
             "line": 358,
             "col": 16,
-            "offset": 10210
+            "offset": 10235
           },
           "end": {
             "line": 358,
             "col": 26,
-            "offset": 10220
+            "offset": 10245
           },
           "extra": {
             "message": "Translation key 'login' should match format 'MODULE.FEATURE.*'",
@@ -16671,192 +16604,212 @@
       },
       "time": {
         "rules": [],
-        "rules_parse_time": 1.457298994064331,
+        "rules_parse_time": 0.36348509788513184,
         "profiling_times": {
-          "config_time": 113.88052988052368,
-          "core_time": 258.0885400772095,
-          "ignores_time": 0.016454696655273438,
-          "total_time": 372.45524501800537
+          "config_time": 17.30483627319336,
+          "core_time": 252.43439602851868,
+          "ignores_time": 0.009997844696044922,
+          "total_time": 270.07677698135376
         },
         "parsing_time": {
-          "total_time": 3.0496253967285156,
+          "total_time": 3.4049224853515625,
           "per_file_time": {
-            "mean": 0.008738181652517234,
-            "std_dev": 0.004272991390484678
+            "mean": 0.009700633861400465,
+            "std_dev": 0.0048666574455443175
           },
           "very_slow_stats": {
-            "time_ratio": 0.509780662362826,
-            "count_ratio": 0.0057306590257879654
+            "time_ratio": 0.6436181490734724,
+            "count_ratio": 0.011396011396011397
           },
           "very_slow_files": [
             {
+              "fpath": "apps/web/src/i18n.js",
+              "ftime": 0.34008193016052246
+            },
+            {
+              "fpath": "apps/web/src/Places.jsx",
+              "ftime": 0.38538098335266113
+            },
+            {
               "fpath": "apps/web/src/Contribute.jsx",
-              "ftime": 0.5838301181793213
+              "ftime": 0.4307999610900879
             },
             {
               "fpath": "apps/web/src/Workspace.jsx",
-              "ftime": 0.9708099365234375
+              "ftime": 1.0352070331573486
             }
           ]
         },
         "scanning_time": {
-          "total_time": 25.2274112701416,
+          "total_time": 25.89812445640564,
           "per_file_time": {
-            "mean": 0.9343485655607998,
-            "std_dev": 3.521115135530909
+            "mean": 0.9591897946816906,
+            "std_dev": 2.809335098047142
           },
           "very_slow_stats": {
-            "time_ratio": 0.6407750534932747,
-            "count_ratio": 0.1111111111111111
+            "time_ratio": 0.8167740482596176,
+            "count_ratio": 0.2222222222222222
           },
           "very_slow_files": [
             {
+              "fpath": "apps/web/src/ui.jsx",
+              "ftime": 1.8216931819915771
+            },
+            {
+              "fpath": "apps/web/src/i18n.js",
+              "ftime": 1.8808159828186035
+            },
+            {
+              "fpath": "apps/web/src/App.jsx",
+              "ftime": 2.0475029945373535
+            },
+            {
               "fpath": "apps/web/src/Places.jsx",
-              "ftime": 2.816145896911621
+              "ftime": 3.767241954803467
             },
             {
               "fpath": "apps/web/src/Contribute.jsx",
-              "ftime": 4.211839914321899
+              "ftime": 4.367856979370117
             },
             {
               "fpath": "apps/web/src/Workspace.jsx",
-              "ftime": 9.137109994888306
+              "ftime": 7.267804861068726
             }
           ]
         },
         "matching_time": {
-          "total_time": 12.142150402069092,
+          "total_time": 12.107048034667969,
           "per_file_and_rule_time": {
-            "mean": 0.03479126189704611,
-            "std_dev": 0.005744428002140923
+            "mean": 0.034493014343783386,
+            "std_dev": 0.005390721391137939
           },
           "very_slow_stats": {
-            "time_ratio": 0.6042371298858562,
-            "count_ratio": 0.08882521489971347
+            "time_ratio": 0.5589841128430048,
+            "count_ratio": 0.07692307692307693
           },
           "very_slow_rules_on_files": [
             {
-              "fpath": "apps/web/src/Workspace.jsx",
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.mcp.security.mcp-ssrf-typescript",
-              "time": 0.3010878562927246
-            },
-            {
               "fpath": "apps/web/src/Places.jsx",
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.injection.tainted-sql-string",
+              "time": 0.29766106605529785
+            },
+            {
+              "fpath": "apps/web/src/Workspace.jsx",
               "rule_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.security.audit.react-href-var",
-              "time": 0.3025062084197998
-            },
-            {
-              "fpath": "apps/web/src/Workspace.jsx",
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.express-ssrf",
-              "time": 0.32096004486083984
-            },
-            {
-              "fpath": "apps/web/src/Workspace.jsx",
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.injection.raw-html-format",
-              "time": 0.3282349109649658
+              "time": 0.3207080364227295
             },
             {
               "fpath": "apps/web/src/i18n.js",
               "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.lang.security.audit.detect-non-literal-fs-filename",
-              "time": 0.3657059669494629
+              "time": 0.3453240394592285
             },
             {
-              "fpath": "apps/web/src/Workspace.jsx",
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.security.audit.react-href-var",
-              "time": 0.367138147354126
-            },
-            {
-              "fpath": "apps/web/src/Workspace.jsx",
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.xss.direct-response-write",
-              "time": 0.4229001998901367
+              "fpath": "apps/web/src/Contribute.jsx",
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.express-ssrf",
+              "time": 0.3473629951477051
             },
             {
               "fpath": "apps/web/src/Contribute.jsx",
               "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.lang.security.audit.unknown-value-with-script-tag",
-              "time": 0.48417115211486816
+              "time": 0.3600640296936035
             },
             {
               "fpath": "apps/web/src/Contribute.jsx",
               "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.xss.direct-response-write",
-              "time": 0.49505615234375
+              "time": 0.3636188507080078
+            },
+            {
+              "fpath": "apps/web/src/App.jsx",
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.express-ssrf",
+              "time": 0.39568185806274414
+            },
+            {
+              "fpath": "apps/web/src/Places.jsx",
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.xss.direct-response-write",
+              "time": 0.4034450054168701
+            },
+            {
+              "fpath": "apps/web/src/Contribute.jsx",
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.injection.raw-html-format",
+              "time": 0.4731109142303467
             },
             {
               "fpath": "apps/web/src/Workspace.jsx",
               "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.lang.security.audit.detect-non-literal-fs-filename",
-              "time": 0.5712020397186279
+              "time": 0.5514590740203857
             }
           ]
         },
         "tainting_time": {
-          "total_time": 7.522783517837524,
+          "total_time": 7.788904190063477,
           "per_def_and_rule_time": {
-            "mean": 0.008294138387913479,
-            "std_dev": 0.00023392163198573572
+            "mean": 0.008384181044201805,
+            "std_dev": 0.00026115445499590845
           },
           "very_slow_stats": {
-            "time_ratio": 0.2503896241862975,
-            "count_ratio": 0.026460859977949284
+            "time_ratio": 0.26388372939853255,
+            "count_ratio": 0.02583423035522067
           },
           "very_slow_rules_on_defs": [
             {
-              "fpath": "apps/web/src/Workspace.jsx",
-              "fline": 768,
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.mcp.security.mcp-ssrf-typescript",
-              "time": 0.07218503952026367
-            },
-            {
-              "fpath": "apps/web/src/Contribute.jsx",
-              "fline": 28,
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.require-request",
-              "time": 0.07360100746154785
+              "fpath": "apps/web/src/App.jsx",
+              "fline": 18,
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.cors-misconfiguration",
+              "time": 0.08182978630065918
             },
             {
               "fpath": "apps/web/src/Workspace.jsx",
               "fline": 1,
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.express-path-join-resolve-traversal",
-              "time": 0.07451987266540527
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.mcp.security.mcp-ssrf-typescript",
+              "time": 0.08246588706970215
             },
             {
-              "fpath": "apps/web/src/Workspace.jsx",
-              "fline": 348,
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.mcp.security.mcp-ssrf-typescript",
-              "time": 0.07592511177062988
+              "fpath": "apps/web/src/Contribute.jsx",
+              "fline": 28,
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.express-ssrf",
+              "time": 0.08254599571228027
+            },
+            {
+              "fpath": "apps/web/src/App.jsx",
+              "fline": 18,
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.require-request",
+              "time": 0.10212492942810059
+            },
+            {
+              "fpath": "apps/web/src/Contribute.jsx",
+              "fline": 28,
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.lang.security.audit.detect-non-literal-require",
+              "time": 0.11191487312316895
+            },
+            {
+              "fpath": "apps/web/src/Contribute.jsx",
+              "fline": 28,
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.xss.direct-response-write",
+              "time": 0.11623191833496094
+            },
+            {
+              "fpath": "apps/web/src/Places.jsx",
+              "fline": 194,
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.injection.tainted-sql-string",
+              "time": 0.1318039894104004
+            },
+            {
+              "fpath": "apps/web/src/Contribute.jsx",
+              "fline": 28,
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.injection.raw-html-format",
+              "time": 0.1420609951019287
+            },
+            {
+              "fpath": "apps/web/src/Contribute.jsx",
+              "fline": 1,
+              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.injection.raw-html-format",
+              "time": 0.14611101150512695
             },
             {
               "fpath": "apps/web/src/Contribute.jsx",
               "fline": 28,
               "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.injection.tainted-sql-string",
-              "time": 0.09214520454406738
-            },
-            {
-              "fpath": "apps/web/src/Workspace.jsx",
-              "fline": 1,
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.mcp.security.mcp-ssrf-typescript",
-              "time": 0.0964210033416748
-            },
-            {
-              "fpath": "apps/web/src/Contribute.jsx",
-              "fline": 28,
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.xss.direct-response-write",
-              "time": 0.10724401473999023
-            },
-            {
-              "fpath": "apps/web/src/Contribute.jsx",
-              "fline": 28,
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.audit.express-ssrf",
-              "time": 0.10876202583312988
-            },
-            {
-              "fpath": "apps/web/src/Workspace.jsx",
-              "fline": 1,
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.lang.security.audit.detect-non-literal-require",
-              "time": 0.16518497467041016
-            },
-            {
-              "fpath": "apps/web/src/Contribute.jsx",
-              "fline": 28,
-              "rule_id": "var.tmp.haiti-semgrep-20261115.rules.javascript.lang.security.audit.detect-non-literal-require",
-              "time": 0.17749381065368652
+              "time": 0.15680313110351562
             }
           ]
         },
@@ -16864,7 +16817,25 @@
           {
             "error_type": "Fixpoint timeout",
             "severity": "warn",
-            "message": "Fixpoint timeout while performing taint analysis at apps/web/src/Contribute.jsx:28:9 [rules: 4, first: var.tmp.haiti-semgrep-20261115.rules.javascript.lang.security.audit.detect-non-literal-require]",
+            "message": "Fixpoint timeout while performing taint analysis at apps/web/src/App.jsx:18:16 [rules: 1, first: var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.require-request]",
+            "location": {
+              "path": "apps/web/src/App.jsx",
+              "start": {
+                "line": 18,
+                "col": 17,
+                "offset": 539
+              },
+              "end": {
+                "line": 18,
+                "col": 20,
+                "offset": 542
+              }
+            }
+          },
+          {
+            "error_type": "Fixpoint timeout",
+            "severity": "warn",
+            "message": "Fixpoint timeout while performing taint analysis at apps/web/src/Contribute.jsx:28:9 [rules: 3, first: var.tmp.haiti-semgrep-20261115.rules.javascript.lang.security.audit.detect-non-literal-require]",
             "location": {
               "path": "apps/web/src/Contribute.jsx",
               "start": {
@@ -16878,6 +16849,42 @@
                 "offset": 695
               }
             }
+          },
+          {
+            "error_type": "Fixpoint timeout",
+            "severity": "warn",
+            "message": "Fixpoint timeout while performing taint analysis at apps/web/src/Places.jsx:194:16 [rules: 1, first: var.tmp.haiti-semgrep-20261115.rules.javascript.express.security.injection.tainted-sql-string]",
+            "location": {
+              "path": "apps/web/src/Places.jsx",
+              "start": {
+                "line": 194,
+                "col": 17,
+                "offset": 5859
+              },
+              "end": {
+                "line": 194,
+                "col": 23,
+                "offset": 5865
+              }
+            }
+          },
+          {
+            "error_type": "Fixpoint timeout",
+            "severity": "warn",
+            "message": "Fixpoint timeout while performing taint analysis at apps/web/src/Places.jsx:383:16 [rules: 2, first: var.tmp.haiti-semgrep-20261115.rules.typescript.react.security.audit.react-href-var]",
+            "location": {
+              "path": "apps/web/src/Places.jsx",
+              "start": {
+                "line": 383,
+                "col": 17,
+                "offset": 12623
+              },
+              "end": {
+                "line": 383,
+                "col": 28,
+                "offset": 12634
+              }
+            }
           }
         ],
         "prefiltering": {
@@ -16885,12 +16892,12 @@
           "file_level_time": 0.0,
           "rules_with_project_prefilters_ratio": 0.0,
           "rules_with_file_prefilters_ratio": 0.9223107569721115,
-          "rules_selected_ratio": 0.13904382470119522,
-          "rules_matched_ratio": 0.13904382470119522
+          "rules_selected_ratio": 0.1398406374501992,
+          "rules_matched_ratio": 0.1398406374501992
         },
         "targets": [],
         "total_bytes": 0,
-        "max_memory_bytes": 521763584
+        "max_memory_bytes": 528598400
       },
       "engine_requested": "OSS",
       "skipped_rules": [],
@@ -16916,9 +16923,9 @@
     "targets_scanned": 14,
     "javascript_targets": 13,
     "parsed_lines_reported": "~100.0%",
-    "raw_findings_count": 475,
+    "raw_findings_count": 473,
     "raw_severity_counts": {
-      "WARNING": 418,
+      "WARNING": 416,
       "INFO": 57
     },
     "scanner_errors_count": 0,
@@ -16926,7 +16933,7 @@
     "triage_groups": [
       {
         "rule_id": "var.tmp.haiti-semgrep-20261115.rules.typescript.react.portability.i18next.i18next-key-format",
-        "count": 417,
+        "count": 415,
         "disposition": "not_applicable_framework_convention",
         "reason": "The app uses its own translator; all literal keys have ES/FR/HT values verified by Node tests.",
         "locations": [
@@ -17185,2249 +17192,2237 @@
           {
             "raw_result_index": 45,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 77,
-            "end_line": 77
+            "line": 78,
+            "end_line": 78
           },
           {
             "raw_result_index": 46,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 92,
-            "end_line": 92
+            "line": 93,
+            "end_line": 93
           },
           {
             "raw_result_index": 49,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 121,
-            "end_line": 121
+            "line": 122,
+            "end_line": 122
           },
           {
             "raw_result_index": 50,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 151,
-            "end_line": 151
+            "line": 152,
+            "end_line": 152
           },
           {
             "raw_result_index": 51,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 168,
-            "end_line": 168
+            "line": 169,
+            "end_line": 169
           },
           {
             "raw_result_index": 52,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 194,
-            "end_line": 194
+            "line": 195,
+            "end_line": 195
           },
           {
             "raw_result_index": 53,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 198,
-            "end_line": 198
+            "line": 199,
+            "end_line": 199
           },
           {
             "raw_result_index": 54,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 202,
-            "end_line": 202
+            "line": 203,
+            "end_line": 203
           },
           {
             "raw_result_index": 55,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 206,
-            "end_line": 206
+            "line": 207,
+            "end_line": 207
           },
           {
             "raw_result_index": 56,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 211,
-            "end_line": 211
+            "line": 212,
+            "end_line": 212
           },
           {
             "raw_result_index": 57,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 259,
-            "end_line": 259
+            "line": 260,
+            "end_line": 260
           },
           {
             "raw_result_index": 58,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 273,
-            "end_line": 273
+            "line": 275,
+            "end_line": 275
           },
           {
             "raw_result_index": 59,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 274,
-            "end_line": 274
+            "line": 280,
+            "end_line": 280
           },
           {
             "raw_result_index": 60,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 279,
-            "end_line": 279
+            "line": 286,
+            "end_line": 286
           },
           {
             "raw_result_index": 61,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 285,
-            "end_line": 285
+            "line": 286,
+            "end_line": 286
           },
           {
             "raw_result_index": 62,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 285,
-            "end_line": 285
+            "line": 288,
+            "end_line": 288
           },
           {
             "raw_result_index": 63,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 287,
-            "end_line": 287
+            "line": 292,
+            "end_line": 292
           },
           {
             "raw_result_index": 64,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 291,
-            "end_line": 291
+            "line": 301,
+            "end_line": 301
           },
           {
             "raw_result_index": 65,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 300,
-            "end_line": 300
+            "line": 307,
+            "end_line": 307
           },
           {
             "raw_result_index": 66,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 306,
-            "end_line": 306
+            "line": 309,
+            "end_line": 309
           },
           {
-            "raw_result_index": 67,
+            "raw_result_index": 68,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 308,
-            "end_line": 308
+            "line": 332,
+            "end_line": 332
           },
           {
             "raw_result_index": 69,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 331,
-            "end_line": 331
+            "line": 340,
+            "end_line": 340
           },
           {
             "raw_result_index": 70,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 339,
-            "end_line": 339
+            "line": 347,
+            "end_line": 347
           },
           {
             "raw_result_index": 71,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 346,
-            "end_line": 346
+            "line": 354,
+            "end_line": 354
           },
           {
             "raw_result_index": 72,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 353,
-            "end_line": 353
+            "line": 362,
+            "end_line": 362
           },
           {
             "raw_result_index": 73,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 361,
-            "end_line": 361
-          },
-          {
-            "raw_result_index": 74,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 370,
-            "end_line": 370
-          },
-          {
-            "raw_result_index": 75,
             "path": "apps/web/src/Contribute.jsx",
             "line": 371,
             "end_line": 371
           },
           {
-            "raw_result_index": 76,
+            "raw_result_index": 74,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 375,
-            "end_line": 375
+            "line": 372,
+            "end_line": 372
           },
           {
-            "raw_result_index": 77,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 375,
-            "end_line": 375
-          },
-          {
-            "raw_result_index": 78,
+            "raw_result_index": 75,
             "path": "apps/web/src/Contribute.jsx",
             "line": 376,
             "end_line": 376
           },
           {
-            "raw_result_index": 79,
+            "raw_result_index": 76,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 376,
+            "end_line": 376
+          },
+          {
+            "raw_result_index": 77,
             "path": "apps/web/src/Contribute.jsx",
             "line": 377,
             "end_line": 377
           },
           {
-            "raw_result_index": 80,
+            "raw_result_index": 78,
             "path": "apps/web/src/Contribute.jsx",
             "line": 378,
             "end_line": 378
           },
           {
-            "raw_result_index": 81,
+            "raw_result_index": 79,
             "path": "apps/web/src/Contribute.jsx",
             "line": 379,
             "end_line": 379
+          },
+          {
+            "raw_result_index": 80,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 380,
+            "end_line": 380
+          },
+          {
+            "raw_result_index": 81,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 380,
+            "end_line": 380
           },
           {
             "raw_result_index": 82,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 379,
-            "end_line": 379
+            "line": 381,
+            "end_line": 381
           },
           {
             "raw_result_index": 83,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 380,
-            "end_line": 380
+            "line": 381,
+            "end_line": 381
           },
           {
             "raw_result_index": 84,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 380,
-            "end_line": 380
+            "line": 383,
+            "end_line": 383
           },
           {
             "raw_result_index": 85,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 382,
-            "end_line": 382
+            "line": 387,
+            "end_line": 387
           },
           {
             "raw_result_index": 86,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 386,
-            "end_line": 386
+            "line": 397,
+            "end_line": 397
           },
           {
             "raw_result_index": 87,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 396,
-            "end_line": 396
+            "line": 406,
+            "end_line": 406
           },
           {
             "raw_result_index": 88,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 405,
-            "end_line": 405
+            "line": 409,
+            "end_line": 409
           },
           {
             "raw_result_index": 89,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 408,
-            "end_line": 408
+            "line": 422,
+            "end_line": 422
           },
           {
             "raw_result_index": 90,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 421,
-            "end_line": 421
+            "line": 426,
+            "end_line": 426
           },
           {
             "raw_result_index": 91,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 425,
-            "end_line": 425
+            "line": 430,
+            "end_line": 430
           },
           {
             "raw_result_index": 92,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 429,
-            "end_line": 429
+            "line": 439,
+            "end_line": 439
           },
           {
             "raw_result_index": 93,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 438,
-            "end_line": 438
+            "line": 441,
+            "end_line": 441
           },
           {
             "raw_result_index": 94,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 440,
-            "end_line": 440
+            "line": 451,
+            "end_line": 451
           },
           {
             "raw_result_index": 95,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 450,
-            "end_line": 450
+            "line": 467,
+            "end_line": 467
           },
           {
             "raw_result_index": 96,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 466,
-            "end_line": 466
+            "line": 489,
+            "end_line": 489
           },
           {
             "raw_result_index": 97,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 488,
-            "end_line": 488
-          },
-          {
-            "raw_result_index": 98,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 490,
-            "end_line": 490
-          },
-          {
-            "raw_result_index": 99,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 490,
-            "end_line": 490
-          },
-          {
-            "raw_result_index": 100,
             "path": "apps/web/src/Contribute.jsx",
             "line": 491,
             "end_line": 491
           },
           {
+            "raw_result_index": 98,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 491,
+            "end_line": 491
+          },
+          {
+            "raw_result_index": 99,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 492,
+            "end_line": 492
+          },
+          {
+            "raw_result_index": 100,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 498,
+            "end_line": 498
+          },
+          {
             "raw_result_index": 101,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 497,
-            "end_line": 497
+            "line": 507,
+            "end_line": 507
           },
           {
             "raw_result_index": 102,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 506,
-            "end_line": 506
+            "line": 510,
+            "end_line": 510
           },
           {
             "raw_result_index": 103,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 509,
-            "end_line": 509
-          },
-          {
-            "raw_result_index": 104,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 520,
-            "end_line": 520
-          },
-          {
-            "raw_result_index": 105,
             "path": "apps/web/src/Contribute.jsx",
             "line": 521,
             "end_line": 521
           },
           {
+            "raw_result_index": 104,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 522,
+            "end_line": 522
+          },
+          {
+            "raw_result_index": 105,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 538,
+            "end_line": 538
+          },
+          {
             "raw_result_index": 106,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 527,
-            "end_line": 527
+            "line": 544,
+            "end_line": 544
           },
           {
             "raw_result_index": 107,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 536,
-            "end_line": 536
-          },
-          {
-            "raw_result_index": 108,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 542,
-            "end_line": 542
+            "line": 548,
+            "end_line": 548
           },
           {
             "raw_result_index": 109,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 546,
-            "end_line": 546
+            "line": 549,
+            "end_line": 549
+          },
+          {
+            "raw_result_index": 110,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 564,
+            "end_line": 564
           },
           {
             "raw_result_index": 111,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 547,
-            "end_line": 547
+            "line": 572,
+            "end_line": 572
           },
           {
             "raw_result_index": 112,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 562,
-            "end_line": 562
+            "line": 586,
+            "end_line": 586
           },
           {
             "raw_result_index": 113,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 570,
-            "end_line": 570
+            "line": 596,
+            "end_line": 596
           },
           {
             "raw_result_index": 114,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 584,
-            "end_line": 584
+            "line": 605,
+            "end_line": 605
           },
           {
             "raw_result_index": 115,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 594,
-            "end_line": 594
+            "line": 615,
+            "end_line": 615
           },
           {
             "raw_result_index": 116,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 603,
-            "end_line": 603
+            "line": 618,
+            "end_line": 618
           },
           {
             "raw_result_index": 117,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 613,
-            "end_line": 613
-          },
-          {
-            "raw_result_index": 118,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 616,
-            "end_line": 616
-          },
-          {
-            "raw_result_index": 119,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 626,
-            "end_line": 626
-          },
-          {
-            "raw_result_index": 120,
             "path": "apps/web/src/Contribute.jsx",
             "line": 628,
             "end_line": 628
           },
           {
+            "raw_result_index": 118,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 630,
+            "end_line": 630
+          },
+          {
+            "raw_result_index": 119,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 633,
+            "end_line": 633
+          },
+          {
+            "raw_result_index": 120,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 639,
+            "end_line": 639
+          },
+          {
             "raw_result_index": 121,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 631,
-            "end_line": 631
+            "line": 651,
+            "end_line": 651
           },
           {
             "raw_result_index": 122,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 637,
-            "end_line": 637
+            "line": 652,
+            "end_line": 652
           },
           {
             "raw_result_index": 123,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 649,
-            "end_line": 649
+            "line": 657,
+            "end_line": 657
           },
           {
             "raw_result_index": 124,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 650,
-            "end_line": 650
-          },
-          {
-            "raw_result_index": 125,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 655,
-            "end_line": 655
-          },
-          {
-            "raw_result_index": 126,
-            "path": "apps/web/src/Contribute.jsx",
-            "line": 662,
-            "end_line": 662
-          },
-          {
-            "raw_result_index": 127,
             "path": "apps/web/src/Contribute.jsx",
             "line": 664,
             "end_line": 664
           },
           {
-            "raw_result_index": 128,
+            "raw_result_index": 125,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 665,
-            "end_line": 665
+            "line": 666,
+            "end_line": 666
           },
           {
-            "raw_result_index": 129,
+            "raw_result_index": 126,
+            "path": "apps/web/src/Contribute.jsx",
+            "line": 667,
+            "end_line": 667
+          },
+          {
+            "raw_result_index": 127,
             "path": "apps/web/src/Home.jsx",
             "line": 40,
             "end_line": 40
           },
           {
-            "raw_result_index": 130,
+            "raw_result_index": 128,
             "path": "apps/web/src/Home.jsx",
             "line": 42,
             "end_line": 42
           },
           {
-            "raw_result_index": 131,
+            "raw_result_index": 129,
             "path": "apps/web/src/Home.jsx",
             "line": 43,
             "end_line": 43
           },
           {
-            "raw_result_index": 132,
+            "raw_result_index": 130,
             "path": "apps/web/src/Home.jsx",
             "line": 47,
             "end_line": 47
           },
           {
-            "raw_result_index": 133,
+            "raw_result_index": 131,
             "path": "apps/web/src/Home.jsx",
             "line": 51,
             "end_line": 51
           },
           {
-            "raw_result_index": 134,
+            "raw_result_index": 132,
             "path": "apps/web/src/Home.jsx",
             "line": 71,
             "end_line": 71
           },
           {
-            "raw_result_index": 135,
+            "raw_result_index": 133,
             "path": "apps/web/src/Home.jsx",
             "line": 72,
             "end_line": 72
           },
           {
-            "raw_result_index": 136,
+            "raw_result_index": 134,
             "path": "apps/web/src/Home.jsx",
             "line": 74,
             "end_line": 74
           },
           {
-            "raw_result_index": 137,
+            "raw_result_index": 135,
             "path": "apps/web/src/Home.jsx",
             "line": 82,
             "end_line": 82
           },
           {
-            "raw_result_index": 138,
+            "raw_result_index": 136,
             "path": "apps/web/src/Home.jsx",
             "line": 108,
             "end_line": 108
           },
           {
-            "raw_result_index": 139,
+            "raw_result_index": 137,
             "path": "apps/web/src/Home.jsx",
             "line": 111,
             "end_line": 111
           },
           {
-            "raw_result_index": 140,
+            "raw_result_index": 138,
             "path": "apps/web/src/Home.jsx",
             "line": 112,
             "end_line": 112
           },
           {
-            "raw_result_index": 142,
+            "raw_result_index": 140,
             "path": "apps/web/src/Home.jsx",
             "line": 140,
             "end_line": 140
           },
           {
-            "raw_result_index": 143,
+            "raw_result_index": 141,
             "path": "apps/web/src/Home.jsx",
             "line": 146,
             "end_line": 146
           },
           {
-            "raw_result_index": 144,
+            "raw_result_index": 142,
             "path": "apps/web/src/Home.jsx",
             "line": 147,
             "end_line": 147
           },
           {
-            "raw_result_index": 145,
+            "raw_result_index": 143,
             "path": "apps/web/src/Home.jsx",
             "line": 150,
             "end_line": 150
           },
           {
+            "raw_result_index": 144,
+            "path": "apps/web/src/Map.jsx",
+            "line": 75,
+            "end_line": 75
+          },
+          {
+            "raw_result_index": 145,
+            "path": "apps/web/src/Map.jsx",
+            "line": 76,
+            "end_line": 76
+          },
+          {
             "raw_result_index": 146,
             "path": "apps/web/src/Map.jsx",
-            "line": 73,
-            "end_line": 73
+            "line": 98,
+            "end_line": 98
           },
           {
             "raw_result_index": 147,
-            "path": "apps/web/src/Map.jsx",
-            "line": 74,
-            "end_line": 74
-          },
-          {
-            "raw_result_index": 148,
-            "path": "apps/web/src/Map.jsx",
-            "line": 96,
-            "end_line": 96
-          },
-          {
-            "raw_result_index": 149,
-            "path": "apps/web/src/Map.jsx",
-            "line": 105,
-            "end_line": 105
-          },
-          {
-            "raw_result_index": 150,
             "path": "apps/web/src/Map.jsx",
             "line": 107,
             "end_line": 107
           },
           {
-            "raw_result_index": 153,
+            "raw_result_index": 148,
+            "path": "apps/web/src/Map.jsx",
+            "line": 109,
+            "end_line": 109
+          },
+          {
+            "raw_result_index": 151,
             "path": "apps/web/src/Places.jsx",
             "line": 58,
             "end_line": 58
           },
           {
-            "raw_result_index": 154,
+            "raw_result_index": 152,
             "path": "apps/web/src/Places.jsx",
             "line": 67,
             "end_line": 67
           },
           {
-            "raw_result_index": 155,
+            "raw_result_index": 153,
             "path": "apps/web/src/Places.jsx",
             "line": 78,
             "end_line": 78
           },
           {
-            "raw_result_index": 156,
+            "raw_result_index": 154,
             "path": "apps/web/src/Places.jsx",
             "line": 85,
             "end_line": 85
           },
           {
-            "raw_result_index": 157,
+            "raw_result_index": 155,
             "path": "apps/web/src/Places.jsx",
             "line": 100,
             "end_line": 100
           },
           {
-            "raw_result_index": 159,
+            "raw_result_index": 157,
             "path": "apps/web/src/Places.jsx",
             "line": 101,
             "end_line": 101
           },
           {
-            "raw_result_index": 160,
+            "raw_result_index": 158,
             "path": "apps/web/src/Places.jsx",
             "line": 119,
             "end_line": 119
           },
           {
-            "raw_result_index": 161,
+            "raw_result_index": 159,
             "path": "apps/web/src/Places.jsx",
             "line": 121,
             "end_line": 121
           },
           {
-            "raw_result_index": 162,
+            "raw_result_index": 160,
             "path": "apps/web/src/Places.jsx",
             "line": 142,
             "end_line": 142
           },
           {
-            "raw_result_index": 163,
+            "raw_result_index": 161,
             "path": "apps/web/src/Places.jsx",
             "line": 148,
             "end_line": 148
           },
           {
+            "raw_result_index": 162,
+            "path": "apps/web/src/Places.jsx",
+            "line": 149,
+            "end_line": 149
+          },
+          {
+            "raw_result_index": 163,
+            "path": "apps/web/src/Places.jsx",
+            "line": 149,
+            "end_line": 149
+          },
+          {
             "raw_result_index": 164,
-            "path": "apps/web/src/Places.jsx",
-            "line": 149,
-            "end_line": 149
-          },
-          {
-            "raw_result_index": 165,
-            "path": "apps/web/src/Places.jsx",
-            "line": 149,
-            "end_line": 149
-          },
-          {
-            "raw_result_index": 166,
             "path": "apps/web/src/Places.jsx",
             "line": 152,
             "end_line": 152
           },
           {
-            "raw_result_index": 168,
+            "raw_result_index": 166,
             "path": "apps/web/src/Places.jsx",
             "line": 171,
             "end_line": 171
           },
           {
-            "raw_result_index": 169,
+            "raw_result_index": 167,
             "path": "apps/web/src/Places.jsx",
             "line": 184,
             "end_line": 184
           },
           {
-            "raw_result_index": 170,
+            "raw_result_index": 168,
             "path": "apps/web/src/Places.jsx",
             "line": 187,
             "end_line": 187
           },
           {
-            "raw_result_index": 173,
+            "raw_result_index": 171,
             "path": "apps/web/src/Places.jsx",
             "line": 233,
             "end_line": 233
           },
           {
-            "raw_result_index": 175,
+            "raw_result_index": 173,
             "path": "apps/web/src/Places.jsx",
             "line": 245,
             "end_line": 245
           },
           {
-            "raw_result_index": 176,
+            "raw_result_index": 174,
             "path": "apps/web/src/Places.jsx",
             "line": 246,
             "end_line": 246
           },
           {
-            "raw_result_index": 177,
+            "raw_result_index": 175,
             "path": "apps/web/src/Places.jsx",
             "line": 250,
             "end_line": 250
           },
           {
-            "raw_result_index": 178,
+            "raw_result_index": 176,
             "path": "apps/web/src/Places.jsx",
             "line": 266,
             "end_line": 266
           },
           {
-            "raw_result_index": 179,
+            "raw_result_index": 177,
             "path": "apps/web/src/Places.jsx",
             "line": 267,
             "end_line": 267
           },
           {
-            "raw_result_index": 180,
+            "raw_result_index": 178,
             "path": "apps/web/src/Places.jsx",
             "line": 273,
             "end_line": 273
           },
           {
+            "raw_result_index": 179,
+            "path": "apps/web/src/Places.jsx",
+            "line": 278,
+            "end_line": 278
+          },
+          {
+            "raw_result_index": 180,
+            "path": "apps/web/src/Places.jsx",
+            "line": 278,
+            "end_line": 278
+          },
+          {
             "raw_result_index": 181,
-            "path": "apps/web/src/Places.jsx",
-            "line": 278,
-            "end_line": 278
-          },
-          {
-            "raw_result_index": 182,
-            "path": "apps/web/src/Places.jsx",
-            "line": 278,
-            "end_line": 278
-          },
-          {
-            "raw_result_index": 183,
             "path": "apps/web/src/Places.jsx",
             "line": 281,
             "end_line": 281
           },
           {
-            "raw_result_index": 184,
+            "raw_result_index": 182,
             "path": "apps/web/src/Places.jsx",
             "line": 286,
             "end_line": 286
           },
           {
-            "raw_result_index": 185,
+            "raw_result_index": 183,
             "path": "apps/web/src/Places.jsx",
             "line": 295,
             "end_line": 295
           },
           {
-            "raw_result_index": 186,
+            "raw_result_index": 184,
             "path": "apps/web/src/Places.jsx",
             "line": 300,
             "end_line": 300
           },
           {
-            "raw_result_index": 187,
+            "raw_result_index": 185,
             "path": "apps/web/src/Places.jsx",
             "line": 311,
             "end_line": 311
           },
           {
-            "raw_result_index": 188,
+            "raw_result_index": 186,
             "path": "apps/web/src/Places.jsx",
             "line": 316,
             "end_line": 316
           },
           {
-            "raw_result_index": 189,
+            "raw_result_index": 187,
             "path": "apps/web/src/Places.jsx",
             "line": 340,
             "end_line": 340
           },
           {
-            "raw_result_index": 190,
+            "raw_result_index": 188,
             "path": "apps/web/src/Places.jsx",
             "line": 341,
             "end_line": 341
           },
           {
-            "raw_result_index": 191,
+            "raw_result_index": 189,
             "path": "apps/web/src/Places.jsx",
             "line": 343,
             "end_line": 343
           },
           {
-            "raw_result_index": 194,
+            "raw_result_index": 192,
             "path": "apps/web/src/Places.jsx",
             "line": 361,
             "end_line": 361
           },
           {
-            "raw_result_index": 195,
+            "raw_result_index": 193,
             "path": "apps/web/src/Places.jsx",
             "line": 367,
             "end_line": 367
           },
           {
-            "raw_result_index": 196,
+            "raw_result_index": 194,
             "path": "apps/web/src/Places.jsx",
             "line": 375,
             "end_line": 375
           },
           {
-            "raw_result_index": 197,
+            "raw_result_index": 195,
             "path": "apps/web/src/Places.jsx",
             "line": 400,
             "end_line": 400
           },
           {
-            "raw_result_index": 198,
+            "raw_result_index": 196,
             "path": "apps/web/src/Places.jsx",
             "line": 408,
             "end_line": 408
           },
           {
-            "raw_result_index": 199,
+            "raw_result_index": 197,
             "path": "apps/web/src/Places.jsx",
             "line": 414,
             "end_line": 414
           },
           {
-            "raw_result_index": 200,
+            "raw_result_index": 198,
             "path": "apps/web/src/Places.jsx",
             "line": 420,
             "end_line": 420
           },
           {
-            "raw_result_index": 201,
+            "raw_result_index": 199,
             "path": "apps/web/src/Places.jsx",
             "line": 442,
             "end_line": 442
           },
           {
-            "raw_result_index": 202,
+            "raw_result_index": 200,
             "path": "apps/web/src/Places.jsx",
             "line": 463,
             "end_line": 463
           },
           {
-            "raw_result_index": 203,
+            "raw_result_index": 201,
             "path": "apps/web/src/Places.jsx",
             "line": 475,
             "end_line": 475
           },
           {
-            "raw_result_index": 204,
+            "raw_result_index": 202,
             "path": "apps/web/src/Places.jsx",
             "line": 483,
             "end_line": 483
           },
           {
-            "raw_result_index": 205,
+            "raw_result_index": 203,
             "path": "apps/web/src/Places.jsx",
             "line": 486,
             "end_line": 486
           },
           {
-            "raw_result_index": 206,
+            "raw_result_index": 204,
             "path": "apps/web/src/Places.jsx",
             "line": 492,
             "end_line": 492
           },
           {
-            "raw_result_index": 207,
+            "raw_result_index": 205,
             "path": "apps/web/src/Places.jsx",
             "line": 499,
             "end_line": 499
           },
           {
-            "raw_result_index": 208,
+            "raw_result_index": 206,
             "path": "apps/web/src/Places.jsx",
             "line": 501,
             "end_line": 501
           },
           {
-            "raw_result_index": 209,
+            "raw_result_index": 207,
             "path": "apps/web/src/Places.jsx",
             "line": 502,
             "end_line": 502
           },
           {
-            "raw_result_index": 210,
+            "raw_result_index": 208,
             "path": "apps/web/src/Places.jsx",
             "line": 504,
             "end_line": 504
           },
           {
-            "raw_result_index": 211,
+            "raw_result_index": 209,
             "path": "apps/web/src/Places.jsx",
             "line": 514,
             "end_line": 514
           },
           {
-            "raw_result_index": 212,
+            "raw_result_index": 210,
             "path": "apps/web/src/Places.jsx",
             "line": 516,
             "end_line": 516
           },
           {
-            "raw_result_index": 213,
+            "raw_result_index": 211,
             "path": "apps/web/src/Places.jsx",
             "line": 520,
             "end_line": 520
           },
           {
-            "raw_result_index": 214,
+            "raw_result_index": 212,
             "path": "apps/web/src/Places.jsx",
             "line": 525,
             "end_line": 525
           },
           {
-            "raw_result_index": 215,
+            "raw_result_index": 213,
             "path": "apps/web/src/Places.jsx",
             "line": 541,
             "end_line": 541
           },
           {
-            "raw_result_index": 216,
+            "raw_result_index": 214,
             "path": "apps/web/src/Places.jsx",
             "line": 548,
             "end_line": 548
           },
           {
-            "raw_result_index": 217,
+            "raw_result_index": 215,
             "path": "apps/web/src/Places.jsx",
             "line": 549,
             "end_line": 549
           },
           {
-            "raw_result_index": 218,
+            "raw_result_index": 216,
             "path": "apps/web/src/Places.jsx",
             "line": 550,
             "end_line": 550
           },
           {
-            "raw_result_index": 219,
+            "raw_result_index": 217,
             "path": "apps/web/src/Places.jsx",
             "line": 551,
             "end_line": 551
           },
           {
-            "raw_result_index": 220,
+            "raw_result_index": 218,
             "path": "apps/web/src/Places.jsx",
             "line": 556,
             "end_line": 556
           },
           {
-            "raw_result_index": 221,
+            "raw_result_index": 219,
             "path": "apps/web/src/Places.jsx",
             "line": 563,
             "end_line": 563
           },
           {
-            "raw_result_index": 222,
+            "raw_result_index": 220,
             "path": "apps/web/src/Workspace.jsx",
             "line": 91,
             "end_line": 91
           },
           {
-            "raw_result_index": 223,
+            "raw_result_index": 221,
             "path": "apps/web/src/Workspace.jsx",
             "line": 127,
             "end_line": 127
           },
           {
-            "raw_result_index": 224,
+            "raw_result_index": 222,
             "path": "apps/web/src/Workspace.jsx",
             "line": 128,
             "end_line": 128
           },
           {
-            "raw_result_index": 225,
+            "raw_result_index": 223,
             "path": "apps/web/src/Workspace.jsx",
             "line": 132,
             "end_line": 132
           },
           {
-            "raw_result_index": 226,
+            "raw_result_index": 224,
             "path": "apps/web/src/Workspace.jsx",
             "line": 138,
             "end_line": 138
           },
           {
-            "raw_result_index": 227,
+            "raw_result_index": 225,
             "path": "apps/web/src/Workspace.jsx",
             "line": 146,
             "end_line": 146
           },
           {
+            "raw_result_index": 226,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 147,
+            "end_line": 147
+          },
+          {
+            "raw_result_index": 227,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 147,
+            "end_line": 147
+          },
+          {
             "raw_result_index": 228,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 147,
-            "end_line": 147
-          },
-          {
-            "raw_result_index": 229,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 147,
-            "end_line": 147
-          },
-          {
-            "raw_result_index": 230,
             "path": "apps/web/src/Workspace.jsx",
             "line": 155,
             "end_line": 155
           },
           {
-            "raw_result_index": 231,
+            "raw_result_index": 229,
             "path": "apps/web/src/Workspace.jsx",
             "line": 158,
             "end_line": 158
           },
           {
-            "raw_result_index": 232,
+            "raw_result_index": 230,
             "path": "apps/web/src/Workspace.jsx",
             "line": 167,
             "end_line": 167
           },
           {
-            "raw_result_index": 233,
+            "raw_result_index": 231,
             "path": "apps/web/src/Workspace.jsx",
             "line": 169,
             "end_line": 169
           },
           {
-            "raw_result_index": 234,
+            "raw_result_index": 232,
             "path": "apps/web/src/Workspace.jsx",
             "line": 175,
             "end_line": 175
           },
           {
-            "raw_result_index": 235,
+            "raw_result_index": 233,
             "path": "apps/web/src/Workspace.jsx",
             "line": 176,
             "end_line": 176
           },
           {
-            "raw_result_index": 236,
+            "raw_result_index": 234,
             "path": "apps/web/src/Workspace.jsx",
             "line": 179,
             "end_line": 179
           },
           {
-            "raw_result_index": 237,
+            "raw_result_index": 235,
             "path": "apps/web/src/Workspace.jsx",
             "line": 185,
             "end_line": 185
           },
           {
-            "raw_result_index": 239,
+            "raw_result_index": 237,
             "path": "apps/web/src/Workspace.jsx",
             "line": 198,
             "end_line": 198
           },
           {
-            "raw_result_index": 240,
+            "raw_result_index": 238,
             "path": "apps/web/src/Workspace.jsx",
             "line": 199,
             "end_line": 199
           },
           {
-            "raw_result_index": 241,
+            "raw_result_index": 239,
             "path": "apps/web/src/Workspace.jsx",
             "line": 203,
             "end_line": 203
           },
           {
-            "raw_result_index": 242,
+            "raw_result_index": 240,
             "path": "apps/web/src/Workspace.jsx",
             "line": 209,
             "end_line": 209
           },
           {
-            "raw_result_index": 245,
+            "raw_result_index": 243,
             "path": "apps/web/src/Workspace.jsx",
             "line": 222,
             "end_line": 222
           },
           {
-            "raw_result_index": 247,
+            "raw_result_index": 245,
             "path": "apps/web/src/Workspace.jsx",
             "line": 235,
             "end_line": 235
           },
           {
-            "raw_result_index": 248,
+            "raw_result_index": 246,
             "path": "apps/web/src/Workspace.jsx",
             "line": 243,
             "end_line": 243
           },
           {
-            "raw_result_index": 249,
+            "raw_result_index": 247,
             "path": "apps/web/src/Workspace.jsx",
             "line": 244,
             "end_line": 244
           },
           {
-            "raw_result_index": 251,
+            "raw_result_index": 249,
             "path": "apps/web/src/Workspace.jsx",
             "line": 263,
             "end_line": 263
           },
           {
-            "raw_result_index": 252,
+            "raw_result_index": 250,
             "path": "apps/web/src/Workspace.jsx",
             "line": 266,
             "end_line": 266
           },
           {
-            "raw_result_index": 258,
+            "raw_result_index": 256,
             "path": "apps/web/src/Workspace.jsx",
             "line": 289,
             "end_line": 289
           },
           {
-            "raw_result_index": 259,
+            "raw_result_index": 257,
             "path": "apps/web/src/Workspace.jsx",
             "line": 296,
             "end_line": 296
           },
           {
-            "raw_result_index": 260,
+            "raw_result_index": 258,
             "path": "apps/web/src/Workspace.jsx",
             "line": 302,
             "end_line": 302
           },
           {
-            "raw_result_index": 273,
+            "raw_result_index": 271,
             "path": "apps/web/src/Workspace.jsx",
             "line": 323,
             "end_line": 323
           },
           {
-            "raw_result_index": 274,
+            "raw_result_index": 272,
             "path": "apps/web/src/Workspace.jsx",
             "line": 324,
             "end_line": 324
           },
           {
-            "raw_result_index": 275,
+            "raw_result_index": 273,
             "path": "apps/web/src/Workspace.jsx",
             "line": 330,
             "end_line": 330
           },
           {
-            "raw_result_index": 277,
+            "raw_result_index": 275,
             "path": "apps/web/src/Workspace.jsx",
             "line": 362,
             "end_line": 362
           },
           {
-            "raw_result_index": 278,
+            "raw_result_index": 276,
             "path": "apps/web/src/Workspace.jsx",
             "line": 363,
             "end_line": 363
           },
           {
-            "raw_result_index": 279,
+            "raw_result_index": 277,
             "path": "apps/web/src/Workspace.jsx",
             "line": 366,
             "end_line": 366
           },
           {
-            "raw_result_index": 280,
+            "raw_result_index": 278,
             "path": "apps/web/src/Workspace.jsx",
             "line": 371,
             "end_line": 371
           },
           {
-            "raw_result_index": 281,
+            "raw_result_index": 279,
             "path": "apps/web/src/Workspace.jsx",
             "line": 386,
             "end_line": 386
           },
           {
-            "raw_result_index": 282,
+            "raw_result_index": 280,
             "path": "apps/web/src/Workspace.jsx",
             "line": 393,
             "end_line": 393
           },
           {
-            "raw_result_index": 283,
+            "raw_result_index": 281,
             "path": "apps/web/src/Workspace.jsx",
             "line": 401,
             "end_line": 401
           },
           {
-            "raw_result_index": 284,
+            "raw_result_index": 282,
             "path": "apps/web/src/Workspace.jsx",
             "line": 407,
             "end_line": 407
           },
           {
-            "raw_result_index": 285,
+            "raw_result_index": 283,
             "path": "apps/web/src/Workspace.jsx",
             "line": 410,
             "end_line": 410
           },
           {
-            "raw_result_index": 286,
+            "raw_result_index": 284,
             "path": "apps/web/src/Workspace.jsx",
             "line": 414,
             "end_line": 414
           },
           {
-            "raw_result_index": 287,
+            "raw_result_index": 285,
             "path": "apps/web/src/Workspace.jsx",
             "line": 416,
             "end_line": 416
           },
           {
+            "raw_result_index": 287,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 428,
+            "end_line": 428
+          },
+          {
+            "raw_result_index": 288,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 428,
+            "end_line": 428
+          },
+          {
             "raw_result_index": 289,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 428,
-            "end_line": 428
-          },
-          {
-            "raw_result_index": 290,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 428,
-            "end_line": 428
-          },
-          {
-            "raw_result_index": 291,
             "path": "apps/web/src/Workspace.jsx",
             "line": 431,
             "end_line": 431
           },
           {
+            "raw_result_index": 290,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 436,
+            "end_line": 436
+          },
+          {
+            "raw_result_index": 291,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 436,
+            "end_line": 436
+          },
+          {
             "raw_result_index": 292,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 436,
-            "end_line": 436
-          },
-          {
-            "raw_result_index": 293,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 436,
-            "end_line": 436
-          },
-          {
-            "raw_result_index": 294,
             "path": "apps/web/src/Workspace.jsx",
             "line": 442,
             "end_line": 442
           },
           {
-            "raw_result_index": 295,
+            "raw_result_index": 293,
             "path": "apps/web/src/Workspace.jsx",
             "line": 448,
             "end_line": 448
           },
           {
-            "raw_result_index": 296,
+            "raw_result_index": 294,
             "path": "apps/web/src/Workspace.jsx",
             "line": 455,
             "end_line": 455
           },
           {
-            "raw_result_index": 297,
+            "raw_result_index": 295,
             "path": "apps/web/src/Workspace.jsx",
             "line": 459,
             "end_line": 459
           },
           {
-            "raw_result_index": 298,
+            "raw_result_index": 296,
             "path": "apps/web/src/Workspace.jsx",
             "line": 477,
             "end_line": 477
           },
           {
-            "raw_result_index": 299,
+            "raw_result_index": 297,
             "path": "apps/web/src/Workspace.jsx",
             "line": 483,
             "end_line": 483
           },
           {
-            "raw_result_index": 300,
+            "raw_result_index": 298,
             "path": "apps/web/src/Workspace.jsx",
             "line": 485,
             "end_line": 485
           },
           {
-            "raw_result_index": 301,
+            "raw_result_index": 299,
             "path": "apps/web/src/Workspace.jsx",
             "line": 487,
             "end_line": 487
           },
           {
-            "raw_result_index": 302,
+            "raw_result_index": 300,
             "path": "apps/web/src/Workspace.jsx",
             "line": 492,
             "end_line": 492
           },
           {
-            "raw_result_index": 303,
+            "raw_result_index": 301,
             "path": "apps/web/src/Workspace.jsx",
             "line": 496,
             "end_line": 496
           },
           {
-            "raw_result_index": 304,
+            "raw_result_index": 302,
             "path": "apps/web/src/Workspace.jsx",
             "line": 499,
             "end_line": 499
           },
           {
-            "raw_result_index": 305,
+            "raw_result_index": 303,
             "path": "apps/web/src/Workspace.jsx",
             "line": 514,
             "end_line": 514
           },
           {
-            "raw_result_index": 306,
+            "raw_result_index": 304,
             "path": "apps/web/src/Workspace.jsx",
             "line": 520,
             "end_line": 520
           },
           {
-            "raw_result_index": 307,
+            "raw_result_index": 305,
             "path": "apps/web/src/Workspace.jsx",
             "line": 533,
             "end_line": 533
           },
           {
-            "raw_result_index": 308,
+            "raw_result_index": 306,
             "path": "apps/web/src/Workspace.jsx",
             "line": 555,
             "end_line": 555
           },
           {
-            "raw_result_index": 309,
+            "raw_result_index": 307,
             "path": "apps/web/src/Workspace.jsx",
             "line": 556,
             "end_line": 556
           },
           {
-            "raw_result_index": 310,
+            "raw_result_index": 308,
             "path": "apps/web/src/Workspace.jsx",
             "line": 572,
             "end_line": 572
           },
           {
-            "raw_result_index": 311,
+            "raw_result_index": 309,
             "path": "apps/web/src/Workspace.jsx",
             "line": 574,
             "end_line": 574
           },
           {
-            "raw_result_index": 312,
+            "raw_result_index": 310,
             "path": "apps/web/src/Workspace.jsx",
             "line": 581,
             "end_line": 581
           },
           {
-            "raw_result_index": 313,
+            "raw_result_index": 311,
             "path": "apps/web/src/Workspace.jsx",
             "line": 589,
             "end_line": 589
           },
           {
-            "raw_result_index": 314,
+            "raw_result_index": 312,
             "path": "apps/web/src/Workspace.jsx",
             "line": 603,
             "end_line": 603
           },
           {
-            "raw_result_index": 315,
+            "raw_result_index": 313,
             "path": "apps/web/src/Workspace.jsx",
             "line": 608,
             "end_line": 608
           },
           {
-            "raw_result_index": 316,
+            "raw_result_index": 314,
             "path": "apps/web/src/Workspace.jsx",
             "line": 609,
             "end_line": 609
           },
           {
-            "raw_result_index": 317,
+            "raw_result_index": 315,
             "path": "apps/web/src/Workspace.jsx",
             "line": 626,
             "end_line": 626
           },
           {
-            "raw_result_index": 318,
+            "raw_result_index": 316,
             "path": "apps/web/src/Workspace.jsx",
             "line": 631,
             "end_line": 631
           },
           {
-            "raw_result_index": 319,
+            "raw_result_index": 317,
             "path": "apps/web/src/Workspace.jsx",
             "line": 633,
             "end_line": 633
           },
           {
-            "raw_result_index": 320,
+            "raw_result_index": 318,
             "path": "apps/web/src/Workspace.jsx",
             "line": 635,
             "end_line": 635
           },
           {
-            "raw_result_index": 322,
+            "raw_result_index": 320,
             "path": "apps/web/src/Workspace.jsx",
             "line": 659,
             "end_line": 659
           },
           {
-            "raw_result_index": 323,
+            "raw_result_index": 321,
             "path": "apps/web/src/Workspace.jsx",
             "line": 660,
             "end_line": 660
           },
           {
-            "raw_result_index": 324,
+            "raw_result_index": 322,
             "path": "apps/web/src/Workspace.jsx",
             "line": 702,
             "end_line": 702
           },
           {
-            "raw_result_index": 325,
+            "raw_result_index": 323,
             "path": "apps/web/src/Workspace.jsx",
             "line": 703,
             "end_line": 703
           },
           {
-            "raw_result_index": 326,
+            "raw_result_index": 324,
             "path": "apps/web/src/Workspace.jsx",
             "line": 706,
             "end_line": 706
           },
           {
-            "raw_result_index": 327,
+            "raw_result_index": 325,
             "path": "apps/web/src/Workspace.jsx",
             "line": 711,
             "end_line": 711
           },
           {
-            "raw_result_index": 328,
+            "raw_result_index": 326,
             "path": "apps/web/src/Workspace.jsx",
             "line": 729,
             "end_line": 729
           },
           {
-            "raw_result_index": 329,
+            "raw_result_index": 327,
             "path": "apps/web/src/Workspace.jsx",
             "line": 732,
             "end_line": 732
           },
           {
-            "raw_result_index": 330,
+            "raw_result_index": 328,
             "path": "apps/web/src/Workspace.jsx",
             "line": 733,
             "end_line": 733
           },
           {
-            "raw_result_index": 331,
+            "raw_result_index": 329,
             "path": "apps/web/src/Workspace.jsx",
             "line": 735,
             "end_line": 735
           },
           {
-            "raw_result_index": 332,
+            "raw_result_index": 330,
             "path": "apps/web/src/Workspace.jsx",
             "line": 737,
             "end_line": 737
           },
           {
-            "raw_result_index": 333,
+            "raw_result_index": 331,
             "path": "apps/web/src/Workspace.jsx",
             "line": 739,
             "end_line": 739
           },
           {
-            "raw_result_index": 334,
+            "raw_result_index": 332,
             "path": "apps/web/src/Workspace.jsx",
             "line": 742,
             "end_line": 742
           },
           {
-            "raw_result_index": 335,
+            "raw_result_index": 333,
             "path": "apps/web/src/Workspace.jsx",
             "line": 743,
             "end_line": 743
           },
           {
+            "raw_result_index": 334,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 747,
+            "end_line": 747
+          },
+          {
+            "raw_result_index": 335,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 747,
+            "end_line": 747
+          },
+          {
             "raw_result_index": 336,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 747,
-            "end_line": 747
-          },
-          {
-            "raw_result_index": 337,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 747,
-            "end_line": 747
-          },
-          {
-            "raw_result_index": 338,
             "path": "apps/web/src/Workspace.jsx",
             "line": 753,
             "end_line": 753
           },
           {
-            "raw_result_index": 339,
+            "raw_result_index": 337,
             "path": "apps/web/src/Workspace.jsx",
             "line": 756,
             "end_line": 756
           },
           {
-            "raw_result_index": 340,
+            "raw_result_index": 338,
             "path": "apps/web/src/Workspace.jsx",
             "line": 757,
             "end_line": 757
           },
           {
+            "raw_result_index": 339,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 759,
+            "end_line": 759
+          },
+          {
+            "raw_result_index": 340,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 759,
+            "end_line": 759
+          },
+          {
             "raw_result_index": 341,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 759,
-            "end_line": 759
-          },
-          {
-            "raw_result_index": 342,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 759,
-            "end_line": 759
-          },
-          {
-            "raw_result_index": 343,
             "path": "apps/web/src/Workspace.jsx",
             "line": 761,
             "end_line": 761
           },
           {
-            "raw_result_index": 346,
+            "raw_result_index": 344,
             "path": "apps/web/src/Workspace.jsx",
             "line": 781,
             "end_line": 781
           },
           {
-            "raw_result_index": 349,
+            "raw_result_index": 347,
             "path": "apps/web/src/Workspace.jsx",
             "line": 783,
             "end_line": 783
           },
           {
-            "raw_result_index": 350,
+            "raw_result_index": 348,
             "path": "apps/web/src/Workspace.jsx",
             "line": 790,
             "end_line": 790
           },
           {
-            "raw_result_index": 351,
+            "raw_result_index": 349,
             "path": "apps/web/src/Workspace.jsx",
             "line": 799,
             "end_line": 799
           },
           {
-            "raw_result_index": 352,
+            "raw_result_index": 350,
             "path": "apps/web/src/Workspace.jsx",
             "line": 800,
             "end_line": 800
           },
           {
-            "raw_result_index": 353,
+            "raw_result_index": 351,
             "path": "apps/web/src/Workspace.jsx",
             "line": 817,
             "end_line": 817
           },
           {
-            "raw_result_index": 354,
+            "raw_result_index": 352,
             "path": "apps/web/src/Workspace.jsx",
             "line": 863,
             "end_line": 863
           },
           {
-            "raw_result_index": 355,
+            "raw_result_index": 353,
             "path": "apps/web/src/Workspace.jsx",
             "line": 900,
             "end_line": 900
           },
           {
-            "raw_result_index": 356,
+            "raw_result_index": 354,
             "path": "apps/web/src/Workspace.jsx",
             "line": 909,
             "end_line": 909
           },
           {
+            "raw_result_index": 355,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 916,
+            "end_line": 916
+          },
+          {
+            "raw_result_index": 356,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 916,
+            "end_line": 916
+          },
+          {
             "raw_result_index": 357,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 916,
-            "end_line": 916
-          },
-          {
-            "raw_result_index": 358,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 916,
-            "end_line": 916
-          },
-          {
-            "raw_result_index": 359,
             "path": "apps/web/src/Workspace.jsx",
             "line": 918,
             "end_line": 918
           },
           {
-            "raw_result_index": 360,
+            "raw_result_index": 358,
             "path": "apps/web/src/Workspace.jsx",
             "line": 932,
             "end_line": 932
           },
           {
-            "raw_result_index": 361,
+            "raw_result_index": 359,
             "path": "apps/web/src/Workspace.jsx",
             "line": 935,
             "end_line": 935
           },
           {
-            "raw_result_index": 366,
+            "raw_result_index": 364,
             "path": "apps/web/src/Workspace.jsx",
             "line": 963,
             "end_line": 963
           },
           {
-            "raw_result_index": 367,
+            "raw_result_index": 365,
             "path": "apps/web/src/Workspace.jsx",
             "line": 966,
             "end_line": 966
           },
           {
-            "raw_result_index": 368,
+            "raw_result_index": 366,
             "path": "apps/web/src/Workspace.jsx",
             "line": 971,
             "end_line": 971
           },
           {
-            "raw_result_index": 369,
+            "raw_result_index": 367,
             "path": "apps/web/src/Workspace.jsx",
             "line": 985,
             "end_line": 985
           },
           {
-            "raw_result_index": 370,
+            "raw_result_index": 368,
             "path": "apps/web/src/Workspace.jsx",
             "line": 987,
             "end_line": 987
           },
           {
-            "raw_result_index": 371,
+            "raw_result_index": 369,
             "path": "apps/web/src/Workspace.jsx",
             "line": 994,
             "end_line": 994
           },
           {
-            "raw_result_index": 372,
+            "raw_result_index": 370,
             "path": "apps/web/src/Workspace.jsx",
             "line": 995,
             "end_line": 995
           },
           {
-            "raw_result_index": 373,
+            "raw_result_index": 371,
             "path": "apps/web/src/Workspace.jsx",
             "line": 996,
             "end_line": 996
           },
           {
-            "raw_result_index": 374,
+            "raw_result_index": 372,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1011,
             "end_line": 1011
           },
           {
-            "raw_result_index": 375,
+            "raw_result_index": 373,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1019,
             "end_line": 1019
           },
           {
-            "raw_result_index": 376,
+            "raw_result_index": 374,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1026,
             "end_line": 1026
           },
           {
-            "raw_result_index": 377,
+            "raw_result_index": 375,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1033,
             "end_line": 1033
           },
           {
-            "raw_result_index": 378,
+            "raw_result_index": 376,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1042,
             "end_line": 1042
           },
           {
-            "raw_result_index": 380,
+            "raw_result_index": 378,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1058,
             "end_line": 1058
           },
           {
-            "raw_result_index": 381,
+            "raw_result_index": 379,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1059,
             "end_line": 1059
           },
           {
-            "raw_result_index": 382,
+            "raw_result_index": 380,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1065,
             "end_line": 1065
           },
           {
-            "raw_result_index": 383,
+            "raw_result_index": 381,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1100,
             "end_line": 1100
           },
           {
-            "raw_result_index": 384,
+            "raw_result_index": 382,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1102,
             "end_line": 1102
           },
           {
-            "raw_result_index": 385,
+            "raw_result_index": 383,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1106,
             "end_line": 1106
           },
           {
-            "raw_result_index": 386,
+            "raw_result_index": 384,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1111,
             "end_line": 1111
           },
           {
-            "raw_result_index": 387,
+            "raw_result_index": 385,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1113,
             "end_line": 1113
           },
           {
-            "raw_result_index": 388,
+            "raw_result_index": 386,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1114,
             "end_line": 1114
           },
           {
-            "raw_result_index": 389,
+            "raw_result_index": 387,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1115,
             "end_line": 1115
           },
           {
-            "raw_result_index": 390,
+            "raw_result_index": 388,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1116,
             "end_line": 1116
           },
           {
-            "raw_result_index": 391,
+            "raw_result_index": 389,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1118,
             "end_line": 1118
           },
           {
-            "raw_result_index": 392,
+            "raw_result_index": 390,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1120,
             "end_line": 1120
           },
           {
-            "raw_result_index": 393,
+            "raw_result_index": 391,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1124,
             "end_line": 1124
           },
           {
-            "raw_result_index": 394,
+            "raw_result_index": 392,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1125,
             "end_line": 1125
           },
           {
-            "raw_result_index": 395,
+            "raw_result_index": 393,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1126,
             "end_line": 1126
           },
           {
-            "raw_result_index": 398,
+            "raw_result_index": 396,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1141,
             "end_line": 1141
           },
           {
-            "raw_result_index": 399,
+            "raw_result_index": 397,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1147,
             "end_line": 1147
           },
           {
-            "raw_result_index": 400,
+            "raw_result_index": 398,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1148,
             "end_line": 1148
           },
           {
-            "raw_result_index": 401,
+            "raw_result_index": 399,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1149,
             "end_line": 1149
           },
           {
-            "raw_result_index": 402,
+            "raw_result_index": 400,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1152,
             "end_line": 1152
           },
           {
-            "raw_result_index": 403,
+            "raw_result_index": 401,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1153,
             "end_line": 1153
           },
           {
-            "raw_result_index": 404,
+            "raw_result_index": 402,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1158,
             "end_line": 1158
           },
           {
-            "raw_result_index": 405,
+            "raw_result_index": 403,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1164,
             "end_line": 1164
           },
           {
-            "raw_result_index": 406,
+            "raw_result_index": 404,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1165,
             "end_line": 1165
           },
           {
-            "raw_result_index": 407,
+            "raw_result_index": 405,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1166,
             "end_line": 1166
           },
           {
-            "raw_result_index": 408,
+            "raw_result_index": 406,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1167,
             "end_line": 1167
           },
           {
-            "raw_result_index": 409,
+            "raw_result_index": 407,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1182,
             "end_line": 1182
           },
           {
-            "raw_result_index": 410,
+            "raw_result_index": 408,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1199,
             "end_line": 1199
           },
           {
-            "raw_result_index": 411,
+            "raw_result_index": 409,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1209,
             "end_line": 1209
           },
           {
-            "raw_result_index": 412,
+            "raw_result_index": 410,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1216,
             "end_line": 1216
           },
           {
-            "raw_result_index": 413,
+            "raw_result_index": 411,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1228,
             "end_line": 1228
           },
           {
-            "raw_result_index": 414,
+            "raw_result_index": 412,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1230,
             "end_line": 1230
           },
           {
-            "raw_result_index": 415,
+            "raw_result_index": 413,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1236,
             "end_line": 1236
           },
           {
-            "raw_result_index": 416,
+            "raw_result_index": 414,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1239,
             "end_line": 1239
           },
           {
-            "raw_result_index": 417,
+            "raw_result_index": 415,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1241,
             "end_line": 1241
           },
           {
-            "raw_result_index": 418,
+            "raw_result_index": 416,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1246,
             "end_line": 1246
           },
           {
-            "raw_result_index": 419,
+            "raw_result_index": 417,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1250,
             "end_line": 1250
           },
           {
-            "raw_result_index": 420,
+            "raw_result_index": 418,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1253,
             "end_line": 1253
           },
           {
-            "raw_result_index": 421,
+            "raw_result_index": 419,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1268,
             "end_line": 1268
           },
           {
-            "raw_result_index": 422,
+            "raw_result_index": 420,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1274,
             "end_line": 1274
           },
           {
-            "raw_result_index": 423,
+            "raw_result_index": 421,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1279,
             "end_line": 1279
           },
           {
-            "raw_result_index": 424,
+            "raw_result_index": 422,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1283,
             "end_line": 1283
           },
           {
-            "raw_result_index": 425,
+            "raw_result_index": 423,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1286,
             "end_line": 1286
           },
           {
-            "raw_result_index": 426,
+            "raw_result_index": 424,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1295,
             "end_line": 1295
           },
           {
-            "raw_result_index": 427,
+            "raw_result_index": 425,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1298,
             "end_line": 1298
           },
           {
-            "raw_result_index": 428,
+            "raw_result_index": 426,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1304,
             "end_line": 1304
           },
           {
-            "raw_result_index": 429,
+            "raw_result_index": 427,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1324,
             "end_line": 1324
           },
           {
-            "raw_result_index": 430,
+            "raw_result_index": 428,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1327,
             "end_line": 1327
           },
           {
-            "raw_result_index": 431,
+            "raw_result_index": 429,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1335,
             "end_line": 1335
           },
           {
-            "raw_result_index": 432,
+            "raw_result_index": 430,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1342,
             "end_line": 1342
           },
           {
-            "raw_result_index": 433,
+            "raw_result_index": 431,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1347,
             "end_line": 1347
           },
           {
-            "raw_result_index": 434,
+            "raw_result_index": 432,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1367,
             "end_line": 1367
           },
           {
-            "raw_result_index": 435,
+            "raw_result_index": 433,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1373,
             "end_line": 1373
           },
           {
-            "raw_result_index": 436,
+            "raw_result_index": 434,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1378,
             "end_line": 1378
           },
           {
-            "raw_result_index": 437,
+            "raw_result_index": 435,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1390,
             "end_line": 1390
           },
           {
-            "raw_result_index": 438,
+            "raw_result_index": 436,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1393,
             "end_line": 1393
           },
           {
-            "raw_result_index": 439,
+            "raw_result_index": 437,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1414,
             "end_line": 1414
           },
           {
-            "raw_result_index": 440,
+            "raw_result_index": 438,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1415,
             "end_line": 1415
           },
           {
-            "raw_result_index": 441,
+            "raw_result_index": 439,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1418,
             "end_line": 1418
           },
           {
-            "raw_result_index": 442,
+            "raw_result_index": 440,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1429,
             "end_line": 1429
           },
           {
-            "raw_result_index": 443,
+            "raw_result_index": 441,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1435,
             "end_line": 1435
           },
           {
-            "raw_result_index": 444,
+            "raw_result_index": 442,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1442,
             "end_line": 1442
           },
           {
-            "raw_result_index": 445,
+            "raw_result_index": 443,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1447,
             "end_line": 1447
           },
           {
-            "raw_result_index": 446,
+            "raw_result_index": 444,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1464,
             "end_line": 1464
           },
           {
-            "raw_result_index": 447,
+            "raw_result_index": 445,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1474,
             "end_line": 1474
           },
           {
-            "raw_result_index": 448,
+            "raw_result_index": 446,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1481,
             "end_line": 1481
           },
           {
-            "raw_result_index": 449,
+            "raw_result_index": 447,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1504,
             "end_line": 1504
           },
           {
-            "raw_result_index": 450,
+            "raw_result_index": 448,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1516,
             "end_line": 1516
           },
           {
-            "raw_result_index": 451,
+            "raw_result_index": 449,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1525,
             "end_line": 1525
           },
           {
-            "raw_result_index": 452,
+            "raw_result_index": 450,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1546,
             "end_line": 1546
           },
           {
-            "raw_result_index": 453,
+            "raw_result_index": 451,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1547,
             "end_line": 1547
           },
           {
-            "raw_result_index": 454,
+            "raw_result_index": 452,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1554,
             "end_line": 1554
           },
           {
-            "raw_result_index": 455,
+            "raw_result_index": 453,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1561,
             "end_line": 1561
           },
           {
-            "raw_result_index": 461,
+            "raw_result_index": 459,
             "path": "apps/web/src/ui.jsx",
             "line": 146,
             "end_line": 146
           },
           {
-            "raw_result_index": 462,
+            "raw_result_index": 460,
             "path": "apps/web/src/ui.jsx",
             "line": 194,
             "end_line": 194
           },
           {
-            "raw_result_index": 463,
+            "raw_result_index": 461,
             "path": "apps/web/src/ui.jsx",
             "line": 205,
             "end_line": 205
           },
           {
-            "raw_result_index": 464,
+            "raw_result_index": 462,
             "path": "apps/web/src/ui.jsx",
             "line": 245,
             "end_line": 245
           },
           {
-            "raw_result_index": 465,
+            "raw_result_index": 463,
             "path": "apps/web/src/ui.jsx",
             "line": 261,
             "end_line": 261
           },
           {
-            "raw_result_index": 466,
+            "raw_result_index": 464,
             "path": "apps/web/src/ui.jsx",
             "line": 262,
             "end_line": 262
           },
           {
-            "raw_result_index": 467,
+            "raw_result_index": 465,
             "path": "apps/web/src/ui.jsx",
             "line": 267,
             "end_line": 267
           },
           {
-            "raw_result_index": 468,
+            "raw_result_index": 466,
             "path": "apps/web/src/ui.jsx",
             "line": 270,
             "end_line": 270
           },
           {
-            "raw_result_index": 469,
+            "raw_result_index": 467,
             "path": "apps/web/src/ui.jsx",
             "line": 276,
             "end_line": 276
           },
           {
-            "raw_result_index": 470,
+            "raw_result_index": 468,
             "path": "apps/web/src/ui.jsx",
             "line": 277,
             "end_line": 277
           },
           {
-            "raw_result_index": 471,
+            "raw_result_index": 469,
             "path": "apps/web/src/ui.jsx",
             "line": 325,
             "end_line": 325
           },
           {
-            "raw_result_index": 472,
+            "raw_result_index": 470,
             "path": "apps/web/src/ui.jsx",
             "line": 342,
             "end_line": 342
           },
           {
-            "raw_result_index": 473,
+            "raw_result_index": 471,
             "path": "apps/web/src/ui.jsx",
             "line": 350,
             "end_line": 350
           },
           {
-            "raw_result_index": 474,
+            "raw_result_index": 472,
             "path": "apps/web/src/ui.jsx",
             "line": 358,
             "end_line": 358
@@ -19459,76 +19454,88 @@
             "end_line": 204
           },
           {
-            "raw_result_index": 110,
+            "raw_result_index": 108,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 547,
-            "end_line": 547
+            "line": 549,
+            "end_line": 549
           },
           {
-            "raw_result_index": 141,
+            "raw_result_index": 139,
             "path": "apps/web/src/Home.jsx",
             "line": 138,
             "end_line": 138
           },
           {
-            "raw_result_index": 174,
+            "raw_result_index": 172,
             "path": "apps/web/src/Places.jsx",
             "line": 244,
             "end_line": 244
           },
           {
-            "raw_result_index": 238,
+            "raw_result_index": 236,
             "path": "apps/web/src/Workspace.jsx",
             "line": 197,
             "end_line": 197
           },
           {
-            "raw_result_index": 246,
+            "raw_result_index": 244,
             "path": "apps/web/src/Workspace.jsx",
             "line": 234,
             "end_line": 234
           },
           {
-            "raw_result_index": 250,
+            "raw_result_index": 248,
             "path": "apps/web/src/Workspace.jsx",
             "line": 262,
             "end_line": 262
           },
           {
-            "raw_result_index": 253,
+            "raw_result_index": 251,
             "path": "apps/web/src/Workspace.jsx",
             "line": 274,
             "end_line": 274
           },
           {
-            "raw_result_index": 254,
+            "raw_result_index": 252,
             "path": "apps/web/src/Workspace.jsx",
             "line": 276,
             "end_line": 276
+          },
+          {
+            "raw_result_index": 253,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 276,
+            "end_line": 276
+          },
+          {
+            "raw_result_index": 254,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 277,
+            "end_line": 277
           },
           {
             "raw_result_index": 255,
             "path": "apps/web/src/Workspace.jsx",
-            "line": 276,
-            "end_line": 276
-          },
-          {
-            "raw_result_index": 256,
-            "path": "apps/web/src/Workspace.jsx",
             "line": 277,
             "end_line": 277
           },
           {
-            "raw_result_index": 257,
+            "raw_result_index": 259,
             "path": "apps/web/src/Workspace.jsx",
-            "line": 277,
-            "end_line": 277
+            "line": 309,
+            "end_line": 309
+          },
+          {
+            "raw_result_index": 260,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 311,
+            "end_line": 311
           },
           {
             "raw_result_index": 261,
             "path": "apps/web/src/Workspace.jsx",
-            "line": 309,
-            "end_line": 309
+            "line": 311,
+            "end_line": 311
           },
           {
             "raw_result_index": 262,
@@ -19539,89 +19546,77 @@
           {
             "raw_result_index": 263,
             "path": "apps/web/src/Workspace.jsx",
-            "line": 311,
-            "end_line": 311
-          },
-          {
-            "raw_result_index": 264,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 311,
-            "end_line": 311
-          },
-          {
-            "raw_result_index": 265,
-            "path": "apps/web/src/Workspace.jsx",
             "line": 312,
             "end_line": 312
           },
           {
-            "raw_result_index": 266,
+            "raw_result_index": 264,
             "path": "apps/web/src/Workspace.jsx",
             "line": 314,
             "end_line": 314
           },
           {
+            "raw_result_index": 265,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 316,
+            "end_line": 316
+          },
+          {
+            "raw_result_index": 266,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 316,
+            "end_line": 316
+          },
+          {
             "raw_result_index": 267,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 316,
-            "end_line": 316
-          },
-          {
-            "raw_result_index": 268,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 316,
-            "end_line": 316
-          },
-          {
-            "raw_result_index": 269,
             "path": "apps/web/src/Workspace.jsx",
             "line": 318,
             "end_line": 318
           },
           {
+            "raw_result_index": 268,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 320,
+            "end_line": 320
+          },
+          {
+            "raw_result_index": 269,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 320,
+            "end_line": 320
+          },
+          {
             "raw_result_index": 270,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 320,
-            "end_line": 320
-          },
-          {
-            "raw_result_index": 271,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 320,
-            "end_line": 320
-          },
-          {
-            "raw_result_index": 272,
             "path": "apps/web/src/Workspace.jsx",
             "line": 321,
             "end_line": 321
           },
           {
-            "raw_result_index": 276,
+            "raw_result_index": 274,
             "path": "apps/web/src/Workspace.jsx",
             "line": 361,
             "end_line": 361
           },
           {
-            "raw_result_index": 288,
+            "raw_result_index": 286,
             "path": "apps/web/src/Workspace.jsx",
             "line": 425,
             "end_line": 425
           },
           {
-            "raw_result_index": 321,
+            "raw_result_index": 319,
             "path": "apps/web/src/Workspace.jsx",
             "line": 658,
             "end_line": 658
           },
           {
-            "raw_result_index": 457,
+            "raw_result_index": 455,
             "path": "apps/web/src/ui.jsx",
             "line": 56,
             "end_line": 56
           },
           {
-            "raw_result_index": 458,
+            "raw_result_index": 456,
             "path": "apps/web/src/ui.jsx",
             "line": 57,
             "end_line": 57
@@ -19637,65 +19632,71 @@
           {
             "raw_result_index": 47,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 106,
-            "end_line": 106
+            "line": 107,
+            "end_line": 107
           },
           {
             "raw_result_index": 48,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 106,
-            "end_line": 106
+            "line": 107,
+            "end_line": 107
           },
           {
-            "raw_result_index": 151,
+            "raw_result_index": 149,
             "path": "apps/web/src/Places.jsx",
             "line": 30,
             "end_line": 30
           },
           {
-            "raw_result_index": 152,
+            "raw_result_index": 150,
             "path": "apps/web/src/Places.jsx",
             "line": 30,
             "end_line": 30
           },
           {
-            "raw_result_index": 171,
+            "raw_result_index": 169,
             "path": "apps/web/src/Places.jsx",
             "line": 225,
             "end_line": 225
           },
           {
-            "raw_result_index": 172,
+            "raw_result_index": 170,
             "path": "apps/web/src/Places.jsx",
             "line": 225,
             "end_line": 225
           },
           {
-            "raw_result_index": 192,
+            "raw_result_index": 190,
             "path": "apps/web/src/Places.jsx",
             "line": 356,
             "end_line": 356
           },
           {
-            "raw_result_index": 193,
+            "raw_result_index": 191,
             "path": "apps/web/src/Places.jsx",
             "line": 356,
             "end_line": 356
           },
           {
-            "raw_result_index": 243,
+            "raw_result_index": 241,
             "path": "apps/web/src/Workspace.jsx",
             "line": 220,
             "end_line": 220
           },
           {
-            "raw_result_index": 244,
+            "raw_result_index": 242,
             "path": "apps/web/src/Workspace.jsx",
             "line": 220,
             "end_line": 220
           },
           {
-            "raw_result_index": 344,
+            "raw_result_index": 342,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 774,
+            "end_line": 774
+          },
+          {
+            "raw_result_index": 343,
             "path": "apps/web/src/Workspace.jsx",
             "line": 774,
             "end_line": 774
@@ -19703,53 +19704,47 @@
           {
             "raw_result_index": 345,
             "path": "apps/web/src/Workspace.jsx",
-            "line": 774,
-            "end_line": 774
+            "line": 782,
+            "end_line": 782
           },
           {
-            "raw_result_index": 347,
+            "raw_result_index": 346,
             "path": "apps/web/src/Workspace.jsx",
             "line": 782,
             "end_line": 782
           },
           {
-            "raw_result_index": 348,
+            "raw_result_index": 360,
             "path": "apps/web/src/Workspace.jsx",
-            "line": 782,
-            "end_line": 782
+            "line": 949,
+            "end_line": 949
+          },
+          {
+            "raw_result_index": 361,
+            "path": "apps/web/src/Workspace.jsx",
+            "line": 949,
+            "end_line": 949
           },
           {
             "raw_result_index": 362,
             "path": "apps/web/src/Workspace.jsx",
-            "line": 949,
-            "end_line": 949
+            "line": 954,
+            "end_line": 954
           },
           {
             "raw_result_index": 363,
             "path": "apps/web/src/Workspace.jsx",
-            "line": 949,
-            "end_line": 949
-          },
-          {
-            "raw_result_index": 364,
-            "path": "apps/web/src/Workspace.jsx",
             "line": 954,
             "end_line": 954
           },
           {
-            "raw_result_index": 365,
-            "path": "apps/web/src/Workspace.jsx",
-            "line": 954,
-            "end_line": 954
-          },
-          {
-            "raw_result_index": 396,
+            "raw_result_index": 394,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1137,
             "end_line": 1137
           },
           {
-            "raw_result_index": 397,
+            "raw_result_index": 395,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1137,
             "end_line": 1137
@@ -19763,37 +19758,37 @@
         "reason": "All six spreads originate from application code/state, not untrusted API attribute objects.",
         "locations": [
           {
-            "raw_result_index": 68,
+            "raw_result_index": 67,
             "path": "apps/web/src/Contribute.jsx",
-            "line": 322,
-            "end_line": 328
+            "line": 323,
+            "end_line": 329
           },
           {
-            "raw_result_index": 158,
+            "raw_result_index": 156,
             "path": "apps/web/src/Places.jsx",
             "line": 100,
             "end_line": 100
           },
           {
-            "raw_result_index": 167,
+            "raw_result_index": 165,
             "path": "apps/web/src/Places.jsx",
             "line": 160,
             "end_line": 166
           },
           {
-            "raw_result_index": 456,
+            "raw_result_index": 454,
             "path": "apps/web/src/ui.jsx",
             "line": 29,
             "end_line": 29
           },
           {
-            "raw_result_index": 459,
+            "raw_result_index": 457,
             "path": "apps/web/src/ui.jsx",
             "line": 72,
             "end_line": 72
           },
           {
-            "raw_result_index": 460,
+            "raw_result_index": 458,
             "path": "apps/web/src/ui.jsx",
             "line": 110,
             "end_line": 110
@@ -19807,7 +19802,7 @@
         "reason": "TerritoryForm intentionally initializes the editable level from its selected territory. Dialog is keyed by territory ID and is closed on reload/save; no security boundary relies on this state.",
         "locations": [
           {
-            "raw_result_index": 379,
+            "raw_result_index": 377,
             "path": "apps/web/src/Workspace.jsx",
             "line": 1050,
             "end_line": 1050
@@ -19816,8 +19811,8 @@
       }
     ],
     "confirmed_security_vulnerabilities": 0,
-    "raw_result_sha256": "e51f5c0cde6c3345d32474f2a6c9c14429882d4f0df77bb0e29a1b2cd5774d89",
-    "shutdown_warning": "RPC subprocess did not exit within 1s; killed it. Scan CLI still exited 0, printed completed successfully and emitted errors:[] JSON.",
+    "raw_result_sha256": "c12df052d00ae05177e504f4e997ff0d7cf8cdd55a296cd8ac411c44386923e1",
+    "shutdown_warning": null,
     "command_flags": [
       "scan",
       "--metrics=off",
@@ -19833,16 +19828,16 @@
     "Sites worker is static-only and contains no API proxy or security-header policy; deployment routing and headers require host-level verification",
     "External map tile requests disclose viewport area and client IP to the selected provider; pilot privacy/provider terms remain an operational decision",
     "No browser penetration testing, fuzzing, provider integration or remote hosting verification was performed in this scoped task",
-    "Node tests and build were not rerun; parent integration owns their execution evidence",
-    "Manual review and OSS rule coverage do not prove absence of vulnerabilities or verify backend authorization and production cookies"
+    "Manual review and OSS rule coverage do not prove absence of vulnerabilities or verify backend authorization and production cookies",
+    "Current integration passed 16 Node tests, a production build and 8 isolated browser tests; physical GPS and remote hosting remain unverified"
   ],
-  "application_code_changed": false,
+  "application_code_changed": true,
   "production_data_changed": false,
   "paid_scanning_resources_created": false,
   "source_hash_verification": {
-    "status": "manual_delta_review_completed",
+    "status": "completed_scan_and_manual_delta_review",
     "files": 14,
     "algorithm": "SHA-256 of final file bytes",
-    "automated_scan_limit": "Contribute.jsx final review rows and ui.jsx controlled dialog Escape handler were adjusted during scan; their final delta was reviewed manually and Node tests passed. Do not equate this final inventory with an atomic scanner snapshot."
+    "automated_scan_limit": "Application sources were unchanged during this scan; test and report edits are outside its frontend scope. Manual review and local tests do not certify providers or production."
   }
 }

@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
-const runId = randomUUID();
+const runId = process.env.E2E_RUN_ID || randomUUID();
 const runtime = path.join(root, "apps/api/.runtime", `e2e-${runId}`);
 const python = path.join(root, "apps/api/.venv", process.platform === "win32" ? "Scripts/python.exe" : "bin/python");
 const env = {
@@ -19,6 +19,7 @@ const env = {
   S3_BUCKET: "",
   RESEND_API_KEY: "",
   TRUSTED_HOSTS: "127.0.0.1,localhost",
+  FORWARDED_ALLOW_IPS: "127.0.0.1",
   REWARDS_CASH_ENABLED: "false",
   SESSION_SECRET: randomBytes(32).toString("hex"),
   API_KEY_PEPPER: randomBytes(32).toString("hex"),
