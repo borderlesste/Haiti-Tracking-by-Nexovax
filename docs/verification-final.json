@@ -2,22 +2,22 @@
   "date": "2026-11-15",
   "branch": "main",
   "api_windows": {
-    "passed": 54,
+    "passed": 56,
     "failed": 0,
     "warnings": 2,
-    "seconds": 83.04,
+    "seconds": 67.61,
     "postgis_tests": 6
   },
   "api_linux_container": {
-    "passed": 54,
+    "passed": 56,
     "failed": 0,
     "warnings": 2,
-    "seconds": 76.99,
-    "checkout": "read-only",
+    "seconds": 72.4,
+    "checkout": "code read-only; isolated runtime writable for fresh-fixture guard tests",
     "database": "disposable test database with scoped schemas"
   },
   "web_and_sites": {
-    "passed": 10,
+    "passed": 12,
     "failed": 0
   },
   "premium_static_ui": {
@@ -34,9 +34,20 @@
   "browser": "docs/BROWSER-QA.md",
   "limits": [
     "No remote Actions run",
-    "No automated browser E2E in CI",
+    "E2E job configured; remote Actions quota/run and remaining master browser scenarios pending",
     "No physical GPS validation",
     "No external email delivery or free staging",
     "OS package findings remain in API image"
-  ]
+  ],
+  "browser_e2e": {
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "seconds": 66.02,
+    "framework": "Playwright 1.65.1",
+    "browser": "isolated Chromium",
+    "hardware_gps": false,
+    "details": "docs/web-e2e-results.json"
+  }
 }

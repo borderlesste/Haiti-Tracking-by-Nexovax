@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import net from "node:net";
 const root = fileURLToPath(new URL("../", import.meta.url));
-if (existsSync(path.join(root, ".env")))
+if (process.env.APP_ENV !== "test" && existsSync(path.join(root, ".env")))
   process.loadEnvFile(path.join(root, ".env"));
 const webPort = Number(process.env.DEV_PORT || 3000),
   apiPort = Number(process.env.API_PORT || 8000);

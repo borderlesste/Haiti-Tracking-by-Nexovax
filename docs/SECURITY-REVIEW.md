@@ -33,8 +33,8 @@ El runtime PostgreSQL se separa del propietario, sin superusuario ni `BYPASSRLS`
 **Ronda final local del 2026-11-15:**
 
 ```text
-pytest: 54 passed, 2 warnings in 83.04s (Windows); 76.99s (Linux)
-Node (web + Sites): 10 passed, 0 failed
+pytest: 56 passed, 2 warnings in 67.61s (Windows); 72.40s (Linux)
+Node (web + Sites + GPS fixtures): 12 passed, 0 failed
 Bandit: 0 resultados, 0 errores
 pip-audit (51 dependencias auditadas): 0 vulnerabilidades conocidas
 ```
@@ -79,7 +79,7 @@ No se deben habilitar dinero real ni compartición de residencias sin los requis
 
 ## 6. Estado de seguridad
 
-El último full pytest pasa con **54 pruebas, incluidos seis casos PostGIS**, y cubre los cambios finales enumerados en este informe. Los hallazgos de correo, enlaces/tokens, dependencia del template y concurrencia canónica tienen correcciones y evidencia de verificación con los límites señalados. Las autorizaciones, privacidad y credenciales disponen de regresiones locales comprobadas.
+El último full pytest pasa con **56 pruebas, incluidos seis casos PostGIS**, y cubre los cambios finales enumerados en este informe. Los hallazgos de correo, enlaces/tokens, dependencia del template y concurrencia canónica tienen correcciones y evidencia de verificación con los límites señalados. Las autorizaciones, privacidad y credenciales disponen de regresiones locales comprobadas.
 
 No se explotó producción, cobraron pagos, revocaron credenciales ni alteraron datos de RD Marketplace. El sistema sigue pendiente de los controles operativos y de despliegue descritos; **no se declara certificación de producción ni ausencia absoluta de vulnerabilidades**. El barrido de archivos iniciales está documentado con sus límites; CI rechaza candidatos nuevos sin imprimir sus valores.
 
@@ -90,8 +90,10 @@ No se explotó producción, cobraron pagos, revocaron credenciales ni alteraron 
 - `Contribute.jsx`, `Workspace.jsx`, `Places.jsx`, `ui.jsx`: resumen previo al envío, recibo con fecha/ID/estado, recuperación de fotos, editor de alias/relaciones y QR limitado a enlace público. El cierre de diálogos respeta la operación pendiente y conserva foco. Backend, no UI, decide propiedad y rol.
 - `deploy/api.Dockerfile`, `deploy/web.Dockerfile`: bases fijadas por digest, actualizaciones OS y usuario API sin root. Se verificó la desaparición de los avisos corregibles de zlib/libxslt. **Quedan 206 pares paquete/CVE en API: 47 HIGH en 11 CVE, 89 MEDIUM, 65 LOW, 5 UNKNOWN; 0 CRITICAL y sin FixedVersion residual publicado en la base consultada.** Web: cero coincidencias OS en esta ronda. Son candidatos de paquete, no 47 ataques remotos demostrados. Riesgo pendiente de seguimiento del proveedor y evaluación de alcanzabilidad; no se presenta como imagen libre de vulnerabilidades. Evidencia y versiones: `CONTAINER-AUDIT.md`, `container-audit.json`.
 - Frontend: Semgrep CE, reglas públicas fijadas, sin subir código: 475 observaciones en cinco grupos, cero errores del scanner. Triage y límite del snapshot/delta final en `FRONTEND-SECURITY.md` y JSON. No equivalen a 475 vulnerabilidades.
-- Navegador: retiro y recibos; persistencia de alias/sección/fuente; QR, copia, Escape y retorno de foco; MFA administrativo, resumen real, edición territorial con versión distinta, auditoría filtrada, FR/HT. El resumen de envío con GPS positivo requiere todavía GPS del dispositivo o entorno de prueba con permiso: no se declara completado ese E2E por la evidencia backend.
+- Navegador: retiro y recibos; persistencia de alias/sección/fuente; QR, copia, Escape y retorno de foco; MFA administrativo, resumen real, edición territorial con versión distinta, auditoría filtrada, FR/HT. El resumen y envío con GPS ficticio ya pasan en Chromium aislado; no se interpreta como comprobación con hardware físico.
 - Backups: además del ensayo sintético, se verificó antes de 0003 la restauración cifrada de ambos SQLite locales y del PostgreSQL local, conservando catálogo e integridad. `schema-backup-check.json`. La custodia off-site y la recuperación de objetos en un proveedor real siguen pendientes.
-- CI remoto/E2E automatizado y staging gratuito pendientes; el primer push usa `[skip ci]` porque no se pudo verificar cuota/cap de gasto. Render sin autenticar y Supabase sin cupo gratuito aislado. No se usaron recursos pagados ni se modificó RD Marketplace.
+- CI remoto, escenarios web restantes del maestro y staging gratuito pendientes; el primer push usa `[skip ci]` porque no se pudo verificar cuota/cap de gasto. Render sin autenticar y Supabase sin cupo gratuito aislado. No se usaron recursos pagados ni se modificó RD Marketplace.
 
-La suite final también pasó íntegra en Linux, dentro de la imagen API, con checkout de solo lectura y base de pruebas aislada: 54 passed, 2 warnings, 76.99 s. El primer arnés de contenedor falló porque `/app` no incluía la estructura raíz requerida por el test del scanner; se corrigió el montaje y el directorio de caché de pruebas, sin relajar ninguna aserción. La prueba nueva de reverse/geocode comprueba zona administrativa PostGIS, filtro por comuna y punto exterior.
+La suite final también pasó íntegra en Linux, dentro de la imagen API, con checkout de solo lectura y base de pruebas aislada: 56 passed, 2 warnings, 72.40 s. El primer arnés de contenedor falló porque `/app` no incluía la estructura raíz requerida por el test del scanner; se corrigió el montaje y el directorio de caché de pruebas, sin relajar ninguna aserción. La prueba nueva de reverse/geocode comprueba zona administrativa PostGIS, filtro por comuna y punto exterior.
+
+Actualización E2E: 5 pruebas Playwright pasaron en Chromium local aislado, con autorización del propietario. Cubren búsqueda/QR, borrador/alias/retiro, rechazo sin GPS/admin, denegación simulada y revisión antes de envío presencial simulado. Se verificó estado resultante en SQLite por separado. Se agregaron dos regresiones que impiden rutas arbitrarias y reutilizar una base existente en el fixture; correo/S3 quedan deshabilitados y los secretos de sesión son efímeros. WEB-E2E.md distingue estos resultados del GPS físico, escenarios web restantes y CI remoto.

@@ -64,3 +64,7 @@ Sobre QA separado (`3001`/`8001`, cuentas sintéticas):
 - El filtro de auditoría y controles nuevos se revisaron en francés y kreyòl. No hubo errores de consola en este recorrido. Se cerró sesión y se retiró el override de viewport de QA.
 
 Evidencias adicionales locales (ignoradas por Git): `docs/evidence/withdraw-390.png`, `docs/evidence/qr-share-390.png`. El resumen final con envío GPS positivo continúa pendiente de un navegador con permiso/medición física: no se simula como comprobación de campo. Las pruebas backend de señal válida, señal de 150 m, separación pin/observación y corroboración sí pasan.
+
+## Suite Playwright autorizada
+
+Tras la autorización expresa del propietario se ejecutó Chromium con perfil de prueba separado. Los cinco casos de `tests/e2e/critical.spec.mjs` pasaron (66,02 s). El resumen ahora cuenta con evidencia automática positiva mediante GPS ficticio, además de denegación, borrador/retiro y búsqueda/QR. Se consultó la base de ese run de forma independiente. La configuración de CUA fue retirada y su pestaña QA cerrada. No se obtuvieron coordenadas físicas ni se declaró una presencia verificada. WEB-E2E.md y web-e2e-results.json contienen alcance y pendientes.

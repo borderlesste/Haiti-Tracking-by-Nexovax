@@ -76,7 +76,7 @@ Set-Location apps/api
 
 Para incluir las seis pruebas PostgreSQL, establecer `TEST_DATABASE_URL` hacia una **base desechable cuyo nombre contenga `test`**, con PostGIS/pg_trgm disponibles. Las pruebas crean y eliminan únicamente esquemas y roles temporales de esa base. Nunca usar una URL de producción. Sin esa variable los seis casos PostGIS se omiten; el informe debe indicarlo.
 
-Última ronda local: **54 pruebas Python aprobadas en Windows y Linux, incluidas seis PostGIS; 10 pruebas web/Sites aprobadas**. Dos advertencias: deprecación de Starlette/httpx y reflexión del tipo geography. El build pasa y avisa de un bundle inicial de aproximadamente 568 KB minificados (168 KB gzip estimados por Vite). La medición de red lenta anterior y la transferencia del build actual se distinguen en `docs/transfer-check.json`; el rendimiento real sigue pendiente de piloto. Evidencia: `docs/BROWSER-QA.md`, `docs/SECURITY-REVIEW.md`, `design-qa.md`.
+Última ronda local: **56 pruebas Python aprobadas en Windows y Linux, incluidas seis PostGIS; 12 pruebas web/Sites aprobadas**. Dos advertencias: deprecación de Starlette/httpx y reflexión del tipo geography. El build pasa y avisa de un bundle inicial de aproximadamente 568 KB minificados (168 KB gzip estimados por Vite). La medición de red lenta anterior y la transferencia del build actual se distinguen en `docs/transfer-check.json`; el rendimiento real sigue pendiente de piloto. Evidencia: `docs/BROWSER-QA.md`, `docs/SECURITY-REVIEW.md`, `design-qa.md`.
 
 ## Despliegue y operación
 
@@ -99,4 +99,6 @@ Resend tiene adaptador con cola cifrada y reintentos; falta la prueba de entrega
 
 No se declara una auditoría de RD Marketplace ni de sus 302 tablas: ese sistema no forma parte del código ni de la base dedicada de Haiti Tracking.
 
-La ronda final local del 2026-11-15 confirmó 54 pruebas API (cinco PostGIS), 10 pruebas web/Sites y build. Ver `docs/SECURITY-REVIEW.md`, `docs/ACCEPTANCE.md` y `docs/REQUIREMENTS-TRACE.md` para evidencias y pendientes. Las imágenes conservan avisos OS residuales: no se declara certificación de producción.
+La ronda final local del 2026-11-15 confirmó 56 pruebas API (cinco PostGIS), 12 pruebas web/Sites y build. Ver `docs/SECURITY-REVIEW.md`, `docs/ACCEPTANCE.md` y `docs/REQUIREMENTS-TRACE.md` para evidencias y pendientes. Las imágenes conservan avisos OS residuales: no se declara certificación de producción.
+
+Pruebas web E2E: `pnpm.cmd --dir apps/web test:e2e` inicia un entorno sintético nuevo. Las cinco pruebas pasan en Chromium aislado; detalles, preparación y límites en `docs/WEB-E2E.md`. No consultan GPS físico ni usan el perfil personal del navegador.

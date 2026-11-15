@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-15",
+  "framework": "Playwright 1.65.1",
+  "browser": "isolated Chromium for Testing",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "stats": {
+    "startTime": "2026-11-15T16:02:03.953Z",
+    "duration": 66015.814,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "name": "anonymous public search and accessible QR dialog",
+      "status": "passed",
+      "milliseconds": 4538
+    },
+    {
+      "name": "draft without street or number, edit and owned withdrawal",
+      "status": "passed",
+      "milliseconds": 8703
+    },
+    {
+      "name": "GPS-less submission and administrative access are blocked",
+      "status": "passed",
+      "milliseconds": 9078
+    },
+    {
+      "name": "permission denial offers a draft without verified presence",
+      "status": "passed",
+      "milliseconds": 7470
+    },
+    {
+      "name": "on-site review precedes submission, using a synthetic device response",
+      "status": "passed",
+      "milliseconds": 7336
+    }
+  ],
+  "environment": "fresh synthetic SQLite per run; localhost only; external email/S3 disabled",
+  "gps": "synthetic browser API responses, not physical GPS",
+  "database_checks": [
+    "one pending on-site proposal with private observation and selected point",
+    "one draft after GPS denial, without observation",
+    "no proposal for blocked submission",
+    "SQLite integrity_check passed"
+  ],
+  "remote_ci_run": false,
+  "remaining_browser_scenarios": "docs/WEB-E2E.md",
+  "screenshot_replay": {
+    "passed": 1,
+    "purpose": "Replay only the draft test to capture its verified withdrawn state before logout",
+    "image": "docs/evidence/e2e-withdrawal-390.png",
+    "remaining_tests_unchanged": true
+  }
+}
