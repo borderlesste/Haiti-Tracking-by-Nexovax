@@ -1,0 +1,60 @@
+name: haiti-tracking-local
+services:
+  db:
+    image: postgis/postgis:17-3.5
+    environment:
+      POSTGRES_DB: haiti_tracking
+      POSTGRES_USER: haiti_local
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copy .env.example to .env and set a local password}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - haiti_db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U haiti_local -d haiti_tracking"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  api:
+    build:
+      context: .
+      dockerfile: deploy/api.Dockerfile
+    environment:
+      APP_ENV: development
+      DATABASE_URL: postgresql+psycopg://haiti_local:${POSTGRES_PASSWORD}@db:5432/haiti_tracking
+      DATABASE_AUTO_CREATE: "false"
+      WEB_BASE_URL: http://localhost:4173
+      ALLOWED_ORIGINS: http://localhost:4173,http://127.0.0.1:4173
+      TRUSTED_HOSTS: localhost,127.0.0.1,api
+      SESSION_SECRET: ${SESSION_SECRET:?Set SESSION_SECRET in .env}
+      API_KEY_PEPPER: ${API_KEY_PEPPER:?Set API_KEY_PEPPER in .env}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      EMAIL_FROM: ${EMAIL_FROM:-Haiti Tracking <onboarding@resend.dev>}
+      EVIDENCE_DIR: /data/evidence
+      RUNTIME_DIR: /data
+      REWARDS_CASH_ENABLED: "false"
+    command: ["/bin/sh", "-c", "python -m app.cli migrate && exec uvicorn app.main:app --host 0.0.0.0 --port 8000 --no-access-log"]
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - haiti_evidence:/data
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/v1/health', timeout=5)"]
+      interval: 10s
+      timeout: 6s
+      retries: 10
+  web:
+    build:
+      context: .
+      dockerfile: deploy/web.Dockerfile
+    ports:
+      - "127.0.0.1:4173:8080"
+    depends_on:
+      api:
+        condition: service_healthy
+volumes:
+  haiti_db:
+  haiti_evidence:

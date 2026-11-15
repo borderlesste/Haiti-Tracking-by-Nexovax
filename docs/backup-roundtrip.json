@@ -1,0 +1,10 @@
+{
+  "result": "passed",
+  "data": "synthetic only",
+  "catalog_records_restored": 721,
+  "location_code_preserved": true,
+  "audit_and_spatial_column_restored": true,
+  "encrypted_archive": true,
+  "test_key_retained": false,
+  "limitation": "One-process test key only; production key custody, retention and scheduled off-site backups remain operational requirements."
+}

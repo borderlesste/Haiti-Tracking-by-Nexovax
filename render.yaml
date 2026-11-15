@@ -1,0 +1,52 @@
+# Deployment template only. It has not been applied to any Render workspace.
+# Supply a NEW isolated PostGIS database, a verified mail domain and private storage.
+services:
+  - type: web
+    name: haiti-tracking-api-staging
+    runtime: python
+    rootDir: apps/api
+    branch: main
+    plan: starter
+    autoDeployTrigger: "off"
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --no-access-log
+    healthCheckPath: /v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.12"
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_AUTO_CREATE
+        value: "false"
+      - key: DATABASE_URL
+        sync: false
+      - key: BACKEND_DB_ROLE
+        value: haiti_api_runtime
+      - key: WEB_BASE_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: TRUSTED_HOSTS
+        sync: false
+      - key: FORWARDED_ALLOW_IPS
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: API_KEY_PEPPER
+        generateValue: true
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: S3_ENDPOINT_URL
+        sync: false
+      - key: S3_BUCKET
+        sync: false
+      - key: S3_ACCESS_KEY_ID
+        sync: false
+      - key: S3_SECRET_ACCESS_KEY
+        sync: false
+      - key: S3_REGION
+        sync: false
+      - key: REWARDS_CASH_ENABLED
+        value: "false"

@@ -1,0 +1,16 @@
+.git
+**/node_modules
+**/dist
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/*.db
+**/evidence
+.env
+.env.*
+!.env.example
+sources
+
+**/.runtime
+**/*.dump
+**/*.backup

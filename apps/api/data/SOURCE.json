@@ -1,0 +1,12 @@
+{
+  "dataset": "https://data.humdata.org/dataset/cod-ab-hti",
+  "metadata_api": "https://data.humdata.org/api/3/action/package_show?id=cod-ab-hti",
+  "resource_url": "https://data.humdata.org/dataset/777e8b06-337f-4295-80bc-ca1515244215/resource/1d89a0d5-897d-4c83-ab37-f363a0dca850/download/hti_admin_boundaries.geojson.zip",
+  "resource_sha256": "9601ebe9bf79188d852cce50e846c789b801b10778701fc20355a4e35fd0a67a",
+  "license": "Creative Commons Attribution for Intergovernmental Organisations (CC BY-IGO)",
+  "license_url": "http://creativecommons.org/licenses/by/3.0/igo/legalcode",
+  "attribution": "Centre National de l’Information Géo-Spatiale (CNIGS), OCHA Haiti, OCHA Field Information Services, HDX",
+  "retrieved_on": "2026-11-14",
+  "metadata_modified": "2026-08-14T06:38:15.202703",
+  "notes": "Haiti administrative level 0-3 boundaries (COD-AB) dataset version 01.  \n  \nThis dataset is structured into 3 levels:  \n- Admin 1: 10 Departement  \n- Admin 2: 140 Commune  \n- Admin 3: 570 section communale / Communal Section  \n  \n  \nDates associated with this dataset:  \n- 06 January 2025: dataset reviewed for accuracy and completeness  \n- 29 November 2018: valid for use by the humanitarian community  \n- 29 March 1987: last edit to the dataset before publishing  \n- 29 March 1987: boundaries created by the source  \n  \nContributed by [OCHA Haiti](https://data.humdata.org/organization/ocha-haiti).  \nQuality assured, configured, and published by [OCHA Field Information Services (FIS)](https://data.humdata.org/organization/ocha-fiss) and [HDX](https://data.humdata.org/organization/hdx).  \n  \nPart of the dataset: [Global Subnational Administrative Boundaries](https://data.humdata.org/dataset/cod-ab-global)"
+}

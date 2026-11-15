@@ -1,0 +1,12 @@
+{
+  "javascript_bytes_identity": 531859,
+  "javascript_bytes_gzip": 187290,
+  "content_encoding": "gzip",
+  "private_api_json_compression_not_enabled": true,
+  "current_build_2026_11_15": {
+    "asset": "/assets/index-BcN1uAa4.js",
+    "wire_bytes": 198637,
+    "content_encoding": "gzip",
+    "measurement": "Local HTTP fetch without throttling; not a mobile load-time measurement"
+  }
+}

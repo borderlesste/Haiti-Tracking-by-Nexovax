@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "before": "additive location relationships migration",
+  "sqlite_encrypted_backups_verified": 2,
+  "sqlite_integrity_and_foreign_keys": "passed",
+  "sqlite_snapshot_method": "Online backup API, complete serialized copy, documented rollback-mode header for in-memory restoration",
+  "sqlite_reference": "https://www.sqlite.org/c3ref/deserialize.html",
+  "postgres_encrypted_dump_and_restore": "passed",
+  "restored_catalog_matches_source": true,
+  "disposable_restore_database_removed": true,
+  "key_custody": "Local ignored backup folder; key not printed",
+  "limits": "Local non-production state only; off-site retention and production key custody remain pending"
+}

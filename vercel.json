@@ -1,0 +1,47 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "installCommand": "npm install --global pnpm@11.25.0 && pnpm --dir apps/web install --frozen-lockfile",
+  "buildCommand": "pnpm --dir apps/web build",
+  "outputDirectory": "apps/web/dist/client",
+  "rewrites": [
+    {
+      "source": "/v1/:path*",
+      "destination": "https://api.example.invalid/v1/:path*"
+    },
+    {
+      "source": "/openapi.json",
+      "destination": "https://api.example.invalid/openapi.json"
+    },
+    { "source": "/((?!v1/).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/v1/:path*",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "CDN-Cache-Control", "value": "no-store" },
+        { "key": "x-vercel-enable-rewrite-caching", "value": "0" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(self), camera=(), microphone=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tile.openstreetmap.org; font-src 'self'; connect-src 'self' https://tile.openstreetmap.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests"
+        }
+      ]
+    }
+  ]
+}

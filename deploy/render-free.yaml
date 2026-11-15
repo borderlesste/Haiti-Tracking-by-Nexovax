@@ -1,0 +1,59 @@
+# Staging-only alternative. Not applied; the root render.yaml is unchanged.
+# Review docs/FREE-STAGING.md and confirm every external dependency has an eligible free allocation.
+# No Render database, disk, worker, cron, automatic migration or paid compute is declared.
+services:
+  - type: web
+    name: haiti-tracking-api-staging-free
+    runtime: python
+    rootDir: apps/api
+    branch: main
+    plan: free
+    autoDeployTrigger: "off"
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --no-access-log
+    healthCheckPath: /v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.12"
+      # Existing application security profile: HTTPS, Secure cookies, restricted DB role, real mail/storage.
+      # This value does not designate the staging service as a production deployment.
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_AUTO_CREATE
+        value: "false"
+      # NEW dedicated external PostgreSQL/PostGIS database, TLS and nonowner runtime credentials.
+      # Never point this at another project's database or an expiring/local SQLite store.
+      - key: DATABASE_URL
+        sync: false
+      - key: BACKEND_DB_ROLE
+        value: haiti_api_runtime
+      - key: WEB_BASE_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: TRUSTED_HOSTS
+        sync: false
+      - key: FORWARDED_ALLOW_IPS
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: API_KEY_PEPPER
+        generateValue: true
+      # Real verified sender and provider key; no development outbox fallback.
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      # Real private, durable S3-compatible evidence storage; no local filesystem fallback.
+      - key: S3_ENDPOINT_URL
+        sync: false
+      - key: S3_BUCKET
+        sync: false
+      - key: S3_ACCESS_KEY_ID
+        sync: false
+      - key: S3_SECRET_ACCESS_KEY
+        sync: false
+      - key: S3_REGION
+        sync: false
+      - key: REWARDS_CASH_ENABLED
+        value: "false"

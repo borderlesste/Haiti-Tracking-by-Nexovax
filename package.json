@@ -1,0 +1,10 @@
+{
+  "name": "haiti-tracking-by-nexovax",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "test": "node --test apps/web/tests/app.test.mjs",
+    "build": "node scripts/web-command.mjs build"
+  }
+}

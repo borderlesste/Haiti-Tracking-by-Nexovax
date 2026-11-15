@@ -1,0 +1,23 @@
+{
+  "profile": "product-admin",
+  "sourceRoots": ["apps/web/src"],
+  "locale": "es",
+  "canonicalMap": "UX-CONTRACT.md",
+  "requiredCapabilities": [
+    "Select/Listbox",
+    "Form",
+    "Scrollbar",
+    "Toast",
+    "CRUD"
+  ],
+  "ownership": { "Select/Listbox": "native" },
+  "requiredCommands": ["unit", "build"],
+  "commands": {
+    "unit": "node --test apps/web/tests/app.test.mjs",
+    "build": "node scripts/web-command.mjs build"
+  },
+  "evidence": {
+    "crudFullFlow": "docs/BROWSER-QA.md",
+    "failurePaths": "apps/api/tests/test_security_review.py"
+  }
+}
